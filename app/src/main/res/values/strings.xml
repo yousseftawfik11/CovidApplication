@@ -2,7 +2,6 @@
     <string name="app_name">Covid App</string>
     <string name="astrazeneca_vaccine">AstraZeneca Vaccine</string>
 
-    <string name="Astra_information">Testing123</string>
 
     //AstraZeneca Questions
     <string name="AstraZeneca1">AstraZeneca COVID-19 Vaccine has side effects.</string>
@@ -17,9 +16,17 @@
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
 
-    <string name="Astra_information">The Oxford–AstraZeneca COVID-19 vaccine, is a viral vector vaccine for prevention of COVID-19.
+    <string name="Astra_info">The Oxford–AstraZeneca COVID-19 vaccine, is a viral vector vaccine for prevention of COVID-19.
         Developed by Oxford University and AstraZeneca, it is given by intramuscular injection,
         Studies carried out in 2020 showed that the efficacy of the vaccine is 76.0% at preventing symptomatic COVID-19 beginning at 22 days following the first dose and 81.3% after the second dose.</string>
-    <string name="more_info">More Info</string>
-
+    <string name="more_info_button">More Info</string>
+    <string name="Pfizer_vaccine">Pfizer Vaccine</string>
+<string name="Pfizer_info">
+    The Pfizer–BioNTech COVID-19 vaccine, sold under the brand name Comirnaty, is an mRNA-based COVID-19 vaccine developed by the German company BioNTech.
+    It is authorized for use in people aged 12 years and older in some jurisdictions and for people 16 years and older in other jurisdictions
+</string>
+    <string name="sinopharm_vaccine">Sinopharm Vaccine</string>
+    <string name="Sinopharm_info">As an inactivated vaccine like CoronaVac and Covaxin, BBIBP-CorV uses a more traditional technology that is similar to the inactivated polio vaccine.
+        Initially, a sample of SARS-CoV-2 from China capable of rapid multiplication was used to grow large quantities of the virus using vero cells.</string>
+    <string name="next_activity">Next Activity</string>
 </resources>
