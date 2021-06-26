@@ -41,6 +41,16 @@
             android:onClick="AstraWeb"
             android:text="@string/more_info_button" />
 
+        <Button
+            android:id="@+id/AstraQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:onClick="AstraQuiz"
+            android:text="@string/Astra_quiz_text" />
+
         <TextView
             android:id="@+id/Pfizer_head"
             android:layout_width="wrap_content"
@@ -69,6 +79,16 @@
             android:onClick="pfizerWeb"
             android:text="@string/more_info_button" />
 
+        <Button
+            android:id="@+id/PfizerQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:onClick="PfizerQuiz"
+            android:text="@string/Pfizer_quiz_text" />
+
         <TextView
             android:id="@+id/sinopharm_head"
             android:layout_width="wrap_content"
@@ -96,13 +116,13 @@
             android:text="@string/more_info_button" />
 
         <Button
-            android:id="@+id/nextPage1"
+            android:id="@+id/SinoQuizButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:onClick="nextActivity"
-            android:text="@string/next_activity" />
+            android:onClick="SinoQuiz"
+            android:text="@string/Sino_quiz_text" />
     </LinearLayout>
 </ScrollView>

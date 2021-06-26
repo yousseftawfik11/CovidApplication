@@ -6,13 +6,26 @@
     //AstraZeneca Questions
     <string name="AstraZeneca1">AstraZeneca COVID-19 Vaccine has side effects.</string>
     <string name="AstraZeneca2">Headache is a known side effect of AstraZeneca vaccine.</string>
-    <string name="AstraZeneca3">Bleeding is a know side effect of AstraZeneca vaccine.</string>
+    <string name="AstraZeneca3">Bleeding is a known side effect of AstraZeneca vaccine.</string>
     <string name="AstraZeneca4">Only one dose of AstraZeneca is required.</string>
     <string name="AstraZeneca5">People under 60 are eligible to take the AstraZeneca vaccine.</string>
+    //Pfizer Questions
+    <string name="Pfizer1">Breathing difficulty is a known side effects of Pfizer vaccine.</string>
+    <string name="Pfizer2">If I experience any of the side effects, I shouldn\’t call for help.</string>
+    <string name="Pfizer3">Can Pfizer vaccine make me develop Covid-19?</string>
+    <string name="Pfizer4">Children under 12 are eligible to take Pfizer vaccine.</string>
+    <string name="Pfizer5">Muscle pains is another side effect of Pfizer vaccine.</string>
+    //Sinopharm Questions
+    <string name="Sino1">Sinopharm is recommended for people under 18.</string>
+    <string name="Sino2">Headache is <b><u>NOT</u></b> a side effect of Sinopharm vaccine.</string>
+    <string name="Sino3">Fever is <b><u>NOT</u></b> a side effect of Sinopharm vaccine.</string>
+    <string name="Sino4">Sinopharm vaccine could cause pain at the injection site.</string>
+    <string name="Sino5">Fatigue is <b><u>NOT</u></b> a side effect of Sinopharm vaccine.</string>
 
     <string name="true_button">TRUE</string>
     <string name="false_button">FALSE</string>
     <string name="next_button">NEXT</string>
+    <string name="form_button_text">Fill Form</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
 
@@ -21,12 +34,14 @@
         Studies carried out in 2020 showed that the efficacy of the vaccine is 76.0% at preventing symptomatic COVID-19 beginning at 22 days following the first dose and 81.3% after the second dose.</string>
     <string name="more_info_button">More Info</string>
     <string name="Pfizer_vaccine">Pfizer Vaccine</string>
-<string name="Pfizer_info">
+    <string name="Pfizer_info">
     The Pfizer–BioNTech COVID-19 vaccine, sold under the brand name Comirnaty, is an mRNA-based COVID-19 vaccine developed by the German company BioNTech.
     It is authorized for use in people aged 12 years and older in some jurisdictions and for people 16 years and older in other jurisdictions
 </string>
     <string name="sinopharm_vaccine">Sinopharm Vaccine</string>
     <string name="Sinopharm_info">As an inactivated vaccine like CoronaVac and Covaxin, BBIBP-CorV uses a more traditional technology that is similar to the inactivated polio vaccine.
         Initially, a sample of SARS-CoV-2 from China capable of rapid multiplication was used to grow large quantities of the virus using vero cells.</string>
-    <string name="next_activity">Next Activity</string>
+    <string name="Sino_quiz_text">Take Sinopharm quiz</string>
+    <string name="Astra_quiz_text">Take Astrazeneca Quiz</string>
+    <string name="Pfizer_quiz_text">Take Pfizer Quiz</string>
 </resources>
