@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">Covid App</string>
     <string name="astrazeneca_vaccine">AstraZeneca Vaccine</string>
+
+    <string name="Astra_information">Testing123</string>
+
+    //AstraZeneca Questions
+    <string name="AstraZeneca1">AstraZeneca COVID-19 Vaccine has side effects.</string>
+    <string name="AstraZeneca2">Headache is a known side effect of AstraZeneca vaccine.</string>
+    <string name="AstraZeneca3">Bleeding is a know side effect of AstraZeneca vaccine.</string>
+    <string name="AstraZeneca4">Only one dose of AstraZeneca is required.</string>
+    <string name="AstraZeneca5">People under 60 are eligible to take the AstraZeneca vaccine.</string>
+
+    <string name="true_button">TRUE</string>
+    <string name="false_button">FALSE</string>
+    <string name="next_button">NEXT</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+
     <string name="Astra_information">The Oxford–AstraZeneca COVID-19 vaccine, is a viral vector vaccine for prevention of COVID-19.
         Developed by Oxford University and AstraZeneca, it is given by intramuscular injection,
         Studies carried out in 2020 showed that the efficacy of the vaccine is 76.0% at preventing symptomatic COVID-19 beginning at 22 days following the first dose and 81.3% after the second dose.</string>
     <string name="more_info">More Info</string>
+
 </resources>
