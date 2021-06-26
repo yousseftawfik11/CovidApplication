@@ -3,12 +3,85 @@ package com.example.covidapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
+    private Button mTrueButton;
+    private Button mFalseButton;
+    private Button mNextButton;
+    private TextView mQuestionTextView;
+
+    //Array to save the questions into
+    private Questions[] mQuestionArray = new Questions[]{
+            new Questions(R.string.AstraZeneca1, true),
+            new Questions(R.string.AstraZeneca2, true),
+            new Questions(R.string.AstraZeneca3, false),
+            new Questions(R.string.AstraZeneca4, false),
+            new Questions(R.string.AstraZeneca5, true)
+    };
+
+    private int mCurrentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        mTrueButton = findViewById(R.id.true_button);
+        mFalseButton = findViewById(R.id.false_button);
+        mNextButton = findViewById(R.id.next_button);
+        mQuestionTextView = findViewById(R.id.question_text_view);
+
+        updateQuestion();
+
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCurrentIndex++;
+
+                if(mCurrentIndex == mQuestionArray.length){//to ensure that we haven't run out of questions
+                    mNextButton.setText("End");
+                    mNextButton.setEnabled(false);
+                }
+                else {//if there are still questions
+                    updateQuestion();
+                }
+
+            }
+        });
+
+        mTrueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(true);
+            }
+        });
+
+        mFalseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(false);
+            }
+        });
+    }
+
+    private void updateQuestion() {
+        int question = mQuestionArray[mCurrentIndex].getmTextResultId();
+        mQuestionTextView.setText(question);
+        mNextButton.setEnabled(false);
+    }
+
+    private void checkAnswer(boolean userAnswer){
+        boolean answer = mQuestionArray[mCurrentIndex].ismTrueAnswer();
+        if(userAnswer == answer){
+            Toast.makeText(this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
+            mNextButton.setEnabled(true);
+        }
+        else{
+            Toast.makeText(this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+        }
     }
 }

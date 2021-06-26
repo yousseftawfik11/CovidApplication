@@ -2,4 +2,17 @@
     <string name="app_name">Covid App</string>
     <string name="astrazeneca_vaccine">AstraZeneca Vaccine</string>
     <string name="Astra_information">Testing123</string>
+
+    //AstraZeneca Questions
+    <string name="AstraZeneca1">AstraZeneca COVID-19 Vaccine has side effects.</string>
+    <string name="AstraZeneca2">Headache is a known side effect of AstraZeneca vaccine.</string>
+    <string name="AstraZeneca3">Bleeding is a know side effect of AstraZeneca vaccine.</string>
+    <string name="AstraZeneca4">Only one dose of AstraZeneca is required.</string>
+    <string name="AstraZeneca5">People under 60 are eligible to take the AstraZeneca vaccine.</string>
+
+    <string name="true_button">TRUE</string>
+    <string name="false_button">FALSE</string>
+    <string name="next_button">NEXT</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
 </resources>
