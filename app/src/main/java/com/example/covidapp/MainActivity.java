@@ -35,8 +35,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Sino);
     }
 
-    public void nextActivity(View view) {
+    public void SinoQuiz(View view) {
         Intent next = new Intent(this,QuizActivity.class);
+        next.putExtra("QuestionListNumber", 3);
+        startActivity(next);
+    }
+
+    public void AstraQuiz(View view) {
+        Intent next = new Intent(this,QuizActivity.class);
+        next.putExtra("QuestionListNumber",1);
+        startActivity(next);
+    }
+
+    public void PfizerQuiz(View view) {
+        Intent next = new Intent(this,QuizActivity.class);
+        next.putExtra("QuestionListNumber",2);
         startActivity(next);
     }
 }
