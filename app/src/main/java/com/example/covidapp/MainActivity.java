@@ -22,4 +22,21 @@ public class MainActivity extends AppCompatActivity {
         Intent Astra = new Intent(Intent.ACTION_VIEW,uri);
         startActivity(Astra);
     }
+
+    public void pfizerWeb(View view) {
+        Uri uri = Uri.parse("https://www.who.int/news-room/feature-stories/detail/who-can-take-the-pfizer-biontech-covid-19--vaccine");
+        Intent pfizer = new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(pfizer);
+    }
+
+    public void SinopharmWeb(View view) {
+        Uri uri = Uri.parse("https://www.who.int/news-room/feature-stories/detail/the-sinopharm-covid-19-vaccine-what-you-need-to-know");
+        Intent Sino = new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(Sino);
+    }
+
+    public void nextActivity(View view) {
+        Intent next = new Intent(this,QuizActivity.class);
+        startActivity(next);
+    }
 }
