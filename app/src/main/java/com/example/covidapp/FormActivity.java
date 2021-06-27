@@ -2,6 +2,7 @@ package com.example.covidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 public class FormActivity extends AppCompatActivity {
     private TextView myTitle, myName, myAge, myPhone, myAddress, myEmail, myIC;
-    //private RadioGroup myGender;
+    private RadioGroup myGender;
     int listNumber;
 
     @Override
@@ -30,7 +31,7 @@ public class FormActivity extends AppCompatActivity {
             myTitle.setText("Sinopharm User Form");
         }
         myName = findViewById(R.id.text_name);
-        //myGender = findViewById(R.id.radio_gender);
+        myGender = findViewById(R.id.radio_gender);
         myAge = findViewById(R.id.text_age);
         myPhone = findViewById(R.id.text_phone);
         myAddress = findViewById(R.id.text_address);
@@ -79,7 +80,26 @@ public class FormActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getText()) == false &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
                 TextUtils.isEmpty(myEmail.getText()) == false && TextUtils.isEmpty(myIC.getText()) == false){
-            //Proceeds to next activity
+            //Proceeding to next activity
+            Intent intent = new Intent(this,ConfirmationFormActivity.class);
+            intent.putExtra("QuestionListNumber", listNumber);
+            //storing user values in variables
+            String cName = myName.getText().toString();
+            String cAge = myAge.getText().toString();
+            String cPhone = myPhone.getText().toString();
+            String cAddress = myAddress.getText().toString();
+            String cEmail = myEmail.getText().toString();
+            String cIC = myIC.getText().toString();
+
+            //Sending values to next activity
+            intent.putExtra("name", cName);
+            intent.putExtra("gender", myGender.getCheckedRadioButtonId());
+            intent.putExtra("age", cAge);
+            intent.putExtra("phone", cPhone);
+            intent.putExtra("address", cAddress);
+            intent.putExtra("email", cEmail);
+            intent.putExtra("icNumber", cIC);
+            startActivity(intent);
         }
         else {
             //stays on the same page
