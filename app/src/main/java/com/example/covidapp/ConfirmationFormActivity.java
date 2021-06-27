@@ -42,12 +42,16 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         First_date =findViewById(R.id.firstDose_date);
 
         String Pname= getIntent().getStringExtra("name");
+ Youssef
         String Pnum = getIntent().getStringExtra("phone");
         String PAdress= getIntent().getStringExtra("address");
         String PEmail= getIntent().getStringExtra("email");
         String PICnum= getIntent().getStringExtra("icNumber");
         String P_age= getIntent().getStringExtra("age");
         int genderNum= getIntent().getIntExtra("gender",0);
+
+        String genderNum= getIntent().getStringExtra("gender");
+ master
 
 
 
