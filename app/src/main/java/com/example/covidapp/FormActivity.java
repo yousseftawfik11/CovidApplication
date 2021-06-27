@@ -93,12 +93,19 @@ public class FormActivity extends AppCompatActivity {
 
             //Sending values to next activity
             intent.putExtra("name", cName);
-            intent.putExtra("gender", myGender.getCheckedRadioButtonId());
+            //intent.putExtra("gender", myGender.getCheckedRadioButtonId());
             intent.putExtra("age", cAge);
             intent.putExtra("phone", cPhone);
             intent.putExtra("address", cAddress);
             intent.putExtra("email", cEmail);
             intent.putExtra("icNumber", cIC);
+            if (myGender.getCheckedRadioButtonId()==0){
+                intent.putExtra("gender", "Male");
+            }
+            else /*if (myGender.getCheckedRadioButtonId()==1)*/{
+                intent.putExtra("gender", "Female");
+            }
+
             startActivity(intent);
         }
         else {

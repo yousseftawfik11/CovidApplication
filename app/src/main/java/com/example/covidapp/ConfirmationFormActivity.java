@@ -32,7 +32,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         GenderC= findViewById(R.id.conf_gender);
 
         String Pname= getIntent().getStringExtra("name");
-        int genderNum= getIntent().getIntExtra("gender",0);
+        String genderNum= getIntent().getStringExtra("gender");
 
 
 
