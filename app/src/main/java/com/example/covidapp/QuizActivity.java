@@ -10,11 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
-    private Button mTrueButton;
-    private Button mFalseButton;
-    private Button mNextButton;
+    private Button mTrueButton, mFalseButton, mNextButton, mFormButton, mHomeButton;
     private TextView mQuestionTextView;
-    private Button mFormButton;
     int listNumber;//a number representing which list to display (sent from intent)
 
     //Array to save the Astrazeneca questions into
@@ -53,6 +50,8 @@ public class QuizActivity extends AppCompatActivity {
         mNextButton = findViewById(R.id.next_button);
         mQuestionTextView = findViewById(R.id.question_text_view);
         mFormButton = findViewById(R.id.form_button);
+        mHomeButton = findViewById(R.id.homepage_button);
+        mHomeButton.setVisibility(View.INVISIBLE);
 
         //getting the value that represents which button has been clicked to generate appropriate
         // list of questions
@@ -76,11 +75,14 @@ public class QuizActivity extends AppCompatActivity {
                 if(mCurrentIndex == AstraQuestionArray.length ||
                         mCurrentIndex == PfizerQuestionArray.length ||
                         mCurrentIndex == SinopharmQuesionArray.length){//to ensure that we haven't run out of questions
-                    mNextButton.setText("End");
-                    mNextButton.setEnabled(false);
+                    //mNextButton.setText("End");
+                    //mNextButton.setEnabled(false);
+                    mNextButton.setVisibility(View.INVISIBLE);
+                    mQuestionTextView.setText("Congratulations, you finished the quiz!!");
                     mFormButton.setVisibility(View.VISIBLE);
                     mTrueButton.setVisibility(View.INVISIBLE);
                     mFalseButton.setVisibility(View.INVISIBLE);
+                    mHomeButton.setVisibility(View.VISIBLE);
                 }
                 else {//if there are still questions
                     //updateQuestion();
@@ -172,6 +174,11 @@ public class QuizActivity extends AppCompatActivity {
     public void fillForm(View view) {
         Intent intent = new Intent(this,FormActivity.class);
         intent.putExtra("QuestionListNumber", listNumber);
+        startActivity(intent);
+    }
+
+    public void returnHome(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 }

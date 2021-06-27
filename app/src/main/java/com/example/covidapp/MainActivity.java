@@ -1,5 +1,6 @@
 package com.example.covidapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //to show the icon in the title bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setTitle("Covid App");
+        actionBar.setIcon(R.drawable.mlogo);
+        //getSupportActionBar().setDisplayShowTitleEnabled(true);
+        //setTitle("My new title");
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
