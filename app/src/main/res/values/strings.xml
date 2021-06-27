@@ -44,4 +44,6 @@
     <string name="Sino_quiz_text">Sinopharm quiz</string>
     <string name="Astra_quiz_text">Astrazeneca Quiz</string>
     <string name="Pfizer_quiz_text">Pfizer Quiz</string>
+    <string name="lets_get_vaccinated">Lets get Vaccinated !</string>
+    <string name="finish">Finish</string>
 </resources>

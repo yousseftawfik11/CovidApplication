@@ -4,125 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#43ABC9"
     android:orientation="vertical"
     tools:context=".ConfirmationFormActivity">
 
-    <TextView
-        android:id="@+id/vaccine_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/conf_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="45dp"
-        android:text="TextView" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shapes"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/conf_age"
+            android:id="@+id/vaccine_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/conf_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/conf_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/conf_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/conf_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"
-            android:text="TextView" />
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/conf_gender"
+            android:id="@+id/conf_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"
-            android:text="TextView" />
-
-    </TableRow>
-
-    <TextView
-        android:id="@+id/conf_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/conf_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/conf_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/conf_ICNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/first_doseHead"
+            android:id="@+id/conf_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"
-            android:text="First Dose:" />
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/firstDose_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/second_DoseHead"
+            android:id="@+id/conf_ICNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"
-            android:text="Second Dose:" />
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/first_doseHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="First Dose:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/firstDose_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/second_DoseHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="Second Dose:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/secondDose_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </TableRow>
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
-            android:text="TextView" />
-    </TableRow>
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:shadowColor="#E6DFDF"
+            android:text="@string/lets_get_vaccinated"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Finish"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="homepage"
+        android:text="@string/finish"
+        app:backgroundTint="#35F809" />
+
 
 </LinearLayout>

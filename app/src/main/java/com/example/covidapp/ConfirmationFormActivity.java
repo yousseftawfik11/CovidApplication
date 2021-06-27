@@ -2,16 +2,19 @@ package com.example.covidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class ConfirmationFormActivity extends AppCompatActivity {
 
-    private TextView nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date;
+    private TextView nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date,Second_date;
     int listNumber;
 
     @Override
@@ -21,15 +24,19 @@ public class ConfirmationFormActivity extends AppCompatActivity {
 
         myTitle= findViewById(R.id.vaccine_title);
 
+
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
         if (listNumber == 1){
             myTitle.setText("Astrazeneca Confirmation Form");
+
         }
         else if(listNumber == 2){
             myTitle.setText("Pfizer Confirmation Form");
+
         }
         else{
             myTitle.setText("Sinopharm Confirmation Form");
+
         }
 
         nameC= findViewById(R.id.conf_name);
@@ -40,18 +47,17 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ICnumC= findViewById(R.id.conf_ICNum);
         ageC= findViewById(R.id.conf_age);
         First_date =findViewById(R.id.firstDose_date);
+        Second_date= findViewById(R.id.secondDose_date);
 
         String Pname= getIntent().getStringExtra("name");
- Youssef
+
         String Pnum = getIntent().getStringExtra("phone");
         String PAdress= getIntent().getStringExtra("address");
         String PEmail= getIntent().getStringExtra("email");
         String PICnum= getIntent().getStringExtra("icNumber");
         String P_age= getIntent().getStringExtra("age");
-        int genderNum= getIntent().getIntExtra("gender",0);
-
         String genderNum= getIntent().getStringExtra("gender");
- master
+
 
 
 
@@ -65,19 +71,41 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ageC.setText(P_age);
 
 
-        Date currentDate = new Date();
-
+        DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Calendar c = Calendar.getInstance();
-        c.setTime(currentDate);
-        c.add(Calendar.DAY_OF_MONTH, 1);
+        c.add(Calendar.DAY_OF_MONTH, 7);
+        String result = currentDate.format(c.getTime());
+        First_date.setText(result);
 
-        String pattern = "yyyy-MM-dd";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format(new Date());
 
-        Date currentDatePlusOne = c.getTime();
-        First_date.setText(currentDatePlusOne.toString());
+        if(listNumber==1){
+
+            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
+            Calendar cal = Calendar.getInstance();
+            c.add(Calendar.MONTH,3);
+            String results = CD.format(c.getTime());
+            Second_date.setText(results);
+        }
+        else if(listNumber==2){
+            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
+            Calendar cal = Calendar.getInstance();
+            c.add(Calendar.DAY_OF_MONTH,21);
+            String results = CD.format(c.getTime());
+            Second_date.setText(results);
+        }
+        else {
+            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
+            Calendar cal = Calendar.getInstance();
+            c.add(Calendar.DAY_OF_MONTH,21);
+            String results = CD.format(c.getTime());
+            Second_date.setText(results);
+        }
+
     }
 
 
+    public void homepage(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }
