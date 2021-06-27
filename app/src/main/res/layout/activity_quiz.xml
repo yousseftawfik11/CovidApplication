@@ -4,53 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#43ABC9"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".QuizActivity">
 
-    <TextView
-        android:id="@+id/question_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_width="388dp"
+        android:layout_height="256dp"
+        android:background="@drawable/shapes"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/true_button"
+        <TextView
+            android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="@string/true_button" />
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/false_button"
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="@string/false_button" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/true_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/true_button"
+                app:backgroundTint="#43ABC9" />
+
+            <Button
+                android:id="@+id/false_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/false_button"
+                app:backgroundTint="#43ABC9" />
+        </TableRow>
+
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"
+            app:backgroundTint="#43ABC9" />
+
+        <Button
+            android:id="@+id/form_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:onClick="fillForm"
+            android:text="@string/form_button_text"
+            app:backgroundTint="#35F809" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_button" />
-
-    <Button
-        android:id="@+id/form_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:onClick="fillForm"
-        android:text="@string/form_button_text"
-        app:backgroundTint="#35F809" />
 </LinearLayout>
