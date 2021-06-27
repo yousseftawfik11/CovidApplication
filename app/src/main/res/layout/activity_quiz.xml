@@ -69,5 +69,17 @@
             android:onClick="fillForm"
             android:text="@string/form_button_text"
             app:backgroundTint="#35F809" />
+
+        <Button
+            android:id="@+id/homepage_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:onClick="returnHome"
+            android:text="@string/homepage_button_text"
+            app:backgroundTint="#43ABC9" />
     </LinearLayout>
 </LinearLayout>
