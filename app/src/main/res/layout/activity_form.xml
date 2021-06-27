@@ -4,207 +4,235 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#43ABC9"
     tools:context=".FormActivity">
 
-    <TextView
-        android:id="@+id/FormTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/title_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Name:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
-
-    <EditText
-        android:id="@+id/text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_name"
-        app:layout_constraintStart_toEndOf="@+id/title_name" />
-
-    <TextView
-        android:id="@+id/title_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Gender:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name" />
-
-    <RadioGroup
-        android:id="@+id/radio_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/title_gender"
-        app:layout_constraintTop_toBottomOf="@+id/text_name">
-
-        <RadioButton
-            android:id="@+id/rbMale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:checked="true"
-            android:text="Male" />
-
-        <RadioButton
-            android:id="@+id/rbFemale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Female" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/title_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Age:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_gender" />
-
-    <EditText
-        android:id="@+id/text_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Enter your age"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_age"
-        app:layout_constraintStart_toEndOf="@+id/title_age" />
-
-    <TextView
-        android:id="@+id/title_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Phone Number:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_age" />
-
-    <EditText
-        android:id="@+id/text_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Enter your phone number"
-        android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_phone"
-        app:layout_constraintStart_toEndOf="@+id/title_phone" />
-
-    <TextView
-        android:id="@+id/title_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Address:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_phone" />
-
-    <EditText
-        android:id="@+id/text_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Enter your address"
-        android:inputType="textPostalAddress"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_address"
-        app:layout_constraintStart_toEndOf="@+id/title_address" />
-
-    <TextView
-        android:id="@+id/title_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Email Address:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_address" />
-
-    <EditText
-        android:id="@+id/text_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Enter your Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_email"
-        app:layout_constraintStart_toEndOf="@+id/title_email" />
-
-    <TextView
-        android:id="@+id/title_ic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:text="IC Number:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_email" />
-
-    <EditText
-        android:id="@+id/text_ic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="Enter your IC number"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/title_ic"
-        app:layout_constraintStart_toEndOf="@+id/title_ic" />
-
-    <Button
-        android:id="@+id/button_confirm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="confirm"
-        android:text="Confirm Information"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="381dp"
+        android:layout_height="607dp"
+        android:background="@drawable/shapes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/FormTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
+
+        <EditText
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_name"
+            app:layout_constraintStart_toEndOf="@+id/title_name" />
+
+        <TextView
+            android:id="@+id/title_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Gender:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+        <RadioGroup
+            android:id="@+id/radio_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/title_gender"
+            app:layout_constraintTop_toBottomOf="@+id/text_name">
+
+            <RadioButton
+                android:id="@+id/rbMale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:checked="true"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rbFemale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/title_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Age:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_gender" />
+
+        <EditText
+            android:id="@+id/text_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter your age"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_age"
+            app:layout_constraintStart_toEndOf="@+id/title_age" />
+
+        <TextView
+            android:id="@+id/title_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Phone Number:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_age" />
+
+        <EditText
+            android:id="@+id/text_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter your phone number"
+            android:inputType="phone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_phone"
+            app:layout_constraintStart_toEndOf="@+id/title_phone" />
+
+        <TextView
+            android:id="@+id/title_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Address:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_phone" />
+
+        <EditText
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter your address"
+            android:inputType="textPostalAddress"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_address"
+            app:layout_constraintStart_toEndOf="@+id/title_address" />
+
+        <TextView
+            android:id="@+id/title_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="Email Address:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_address" />
+
+        <EditText
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_email"
+            app:layout_constraintStart_toEndOf="@+id/title_email" />
+
+        <TextView
+            android:id="@+id/title_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:text="IC Number:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email" />
+
+        <EditText
+            android:id="@+id/text_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter your IC number"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_ic"
+            app:layout_constraintStart_toEndOf="@+id/title_ic" />
+
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="48dp"
+            android:onClick="confirm"
+            android:text="Confirm Information"
+            app:backgroundTint="#43ABC9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
