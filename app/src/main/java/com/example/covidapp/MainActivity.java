@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+//implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
 
         Uri uri = Uri.parse("https://www.who.int/news-room/feature-stories/detail/the-oxford-astrazeneca-covid-19-vaccine-what-you-need-to-know");
@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Sino);
     }
 
+
+//explicit intents to open the related quiz for each vaccine
     public void SinoQuiz(View view) {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber", 3);
