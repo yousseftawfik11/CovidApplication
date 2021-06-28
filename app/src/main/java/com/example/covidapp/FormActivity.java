@@ -99,7 +99,7 @@ public class FormActivity extends AppCompatActivity {
             intent.putExtra("address", cAddress);
             intent.putExtra("email", cEmail);
             intent.putExtra("icNumber", cIC);
-            if (myGender.getCheckedRadioButtonId()==0){
+            if (myGender.getCheckedRadioButtonId() == R.id.rbMale){
                 intent.putExtra("gender", "Male");
             }
             else /*if (myGender.getCheckedRadioButtonId()==1)*/{
