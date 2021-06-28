@@ -68,7 +68,8 @@ public class FormActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(myEmail.getText())){
             myEmail.setError("Please enter your email address");
         }
-        else{//Doesn't show error
+        else{//if an email is entered
+            emailVal(myEmail);//Function to make sure that the email is valid
         }
         //Check for an IC number
         if (TextUtils.isEmpty(myIC.getText())){
@@ -79,7 +80,7 @@ public class FormActivity extends AppCompatActivity {
         //checks that all fields are filled
         if(TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getText()) == false &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
-                TextUtils.isEmpty(myEmail.getText()) == false && TextUtils.isEmpty(myIC.getText()) == false){
+                TextUtils.isEmpty(myEmail.getError()) && TextUtils.isEmpty(myIC.getText()) == false){
             //Proceeding to next activity
             Intent intent = new Intent(this,ConfirmationFormActivity.class);
             intent.putExtra("QuestionListNumber", listNumber);
@@ -110,6 +111,14 @@ public class FormActivity extends AppCompatActivity {
         }
         else {
             //stays on the same page
+        }
+    }
+
+    private void emailVal (TextView email){
+        String checkEmail = email.getText().toString().trim();
+        String pattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        if (!checkEmail.matches(pattern)){
+            email.setError("Invalid email! Please put a valid email");
         }
     }
 }
