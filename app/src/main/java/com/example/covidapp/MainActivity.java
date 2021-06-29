@@ -4,6 +4,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setIcon(R.drawable.mlogo);
         //getSupportActionBar().setDisplayShowTitleEnabled(true);
         //setTitle("My new title");
+
+        //to change the color of the title bar (action bar)
+        //Define ColorDrawable object and parse color
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#107491"));
+        //Set BackgroundDrawable
+        actionBar.setBackgroundDrawable(colorDrawable);
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
