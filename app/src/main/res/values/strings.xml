@@ -63,4 +63,7 @@
     <string name="ic_number_Head">IC Number:</string>
     <string name="enter_your_ic_number">Enter your IC number</string>
     <string name="confirm_information">Confirm Information</string>
+    <string name="AstraMinAge">Astrazeneca is not recommended for people under 18 years old.</string>
+    <string name="PfizerMinAge">Pfizer is not recommended for people under 12 years old.</string>
+    <string name="SinoMinAge">Sinopharm is not recommended for people under 18 years old.</string>
 </resources>

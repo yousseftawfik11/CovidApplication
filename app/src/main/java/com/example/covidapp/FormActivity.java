@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
     private TextView myTitle, myName, myAge, myPhone, myAddress, myEmail, myIC;
@@ -67,7 +68,8 @@ public class FormActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(myAge.getText())){
             myAge.setError("Please enter your age");
         }
-        else{//Doesn't show error
+        else{//if an age is entered
+            ageVal(listNumber, myAge);
         }
         //Check for a number
         if (TextUtils.isEmpty(myPhone.getText())){
@@ -95,7 +97,7 @@ public class FormActivity extends AppCompatActivity {
         else{//Doesn't show error
         }
         //checks that all fields are filled
-        if(TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getText()) == false &&
+        if(TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getError()) &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
                 TextUtils.isEmpty(myEmail.getError()) && TextUtils.isEmpty(myIC.getText()) == false){
             //Proceeding to next activity
@@ -131,11 +133,38 @@ public class FormActivity extends AppCompatActivity {
         }
     }
 
-    private void emailVal (TextView email){
+    private void emailVal (TextView email){//Ensures that the user enters a valid email
         String checkEmail = email.getText().toString().trim();
         String pattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         if (!checkEmail.matches(pattern)){
             email.setError("Invalid email! Please put a valid email");
         }
+    }
+
+    private void ageVal(int vacType, TextView age){//ensures that the user is within the allowed age
+        int checkAge = Integer.parseInt(age.getText().toString());//Converting the number to an integer
+        if (vacType == 1){//Astrazeneca
+            if(checkAge<18){
+                age.setError("You must be over 18 years old to take Astrazeneca");
+                Toast.makeText(this, R.string.AstraMinAge, Toast.LENGTH_LONG).show();
+            }
+        }
+        else if (vacType == 2){
+            if(checkAge<12){
+                age.setError("You must be over 12 years old to take Pfizer");
+                Toast.makeText(this, R.string.PfizerMinAge, Toast.LENGTH_LONG).show();
+            }
+        }
+        else {
+            if(checkAge<18){
+                age.setError("You must be over 18 years old to take Sinopharm");
+                Toast.makeText(this, R.string.SinoMinAge, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    public void returnHome(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
