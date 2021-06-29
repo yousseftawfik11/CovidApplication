@@ -1,8 +1,11 @@
 package com.example.covidapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,6 +21,20 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        //to show the icon in the title bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setTitle("Covid App");
+        actionBar.setIcon(R.drawable.mlogo);
+        //getSupportActionBar().setDisplayShowTitleEnabled(true);
+        //setTitle("My new title");
+
+        //to change the color of the title bar (action bar)
+        //Define ColorDrawable object and parse color
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#107491"));
+        //Set BackgroundDrawable
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         myTitle=(TextView)findViewById(R.id.FormTitle);
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
