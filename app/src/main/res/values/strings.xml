@@ -47,4 +47,20 @@
     <string name="Pfizer_quiz_text">Pfizer Quiz</string>
     <string name="lets_get_vaccinated">Lets get Vaccinated !</string>
     <string name="finish">Finish</string>
+    <string name="name_header">Name:</string>
+    <string name="name">Name</string>
+    <string name="genderHead">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="ageHead">Age:</string>
+    <string name="enter_your_age">Enter your age</string>
+    <string name="phonenumberHead">Phone Number:</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="addressHead">Address:</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="email_address_head">Email Address:</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="ic_number_Head">IC Number:</string>
+    <string name="enter_your_ic_number">Enter your IC number</string>
+    <string name="confirm_information">Confirm Information</string>
 </resources>

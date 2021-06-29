@@ -95,7 +95,7 @@ public class QuizActivity extends AppCompatActivity {
                     //mNextButton.setText("End");
                     //mNextButton.setEnabled(false);
                     mNextButton.setVisibility(View.INVISIBLE);
-                    mQuestionTextView.setText("Congratulations, you finished the quiz!!");
+                    mQuestionTextView.setText("Congratulations, you finished the quiz!");
                     mFormButton.setVisibility(View.VISIBLE);
                     mTrueButton.setVisibility(View.INVISIBLE);
                     mFalseButton.setVisibility(View.INVISIBLE);
