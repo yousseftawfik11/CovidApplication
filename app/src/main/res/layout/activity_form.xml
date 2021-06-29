@@ -25,7 +25,8 @@
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/alegreya_sans_sc_medium"/>
 
         <TextView
             android:id="@+id/title_name"
@@ -34,11 +35,12 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Name:"
+            android:text="@string/name_header"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/FormTitle"
+            android:fontFamily="@font/alegreya_sans_sc_medium"/>
 
         <EditText
             android:id="@+id/text_name"
@@ -47,7 +49,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="@string/name"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_name"
             app:layout_constraintStart_toEndOf="@+id/title_name" />
@@ -59,7 +62,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Gender:"
+            android:text="@string/genderHead"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +79,8 @@
             android:checkedButton="@id/rbMale"
             android:orientation="horizontal"
             app:layout_constraintStart_toEndOf="@+id/title_gender"
-            app:layout_constraintTop_toBottomOf="@+id/text_name">
+            app:layout_constraintTop_toBottomOf="@+id/text_name"
+            android:fontFamily="@font/alegreya_sans_sc_medium">
 
             <RadioButton
                 android:id="@+id/rbMale"
@@ -84,23 +89,24 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:checked="false"
-                android:text="Male" />
+                android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/rbFemale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Female" />
+                android:text="@string/female" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/title_age"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Age:"
+            android:text="@string/ageHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +119,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Enter your age"
+            android:hint="@string/enter_your_age"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:inputType="number"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_age"
             app:layout_constraintStart_toEndOf="@+id/title_age" />
@@ -125,7 +132,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Phone Number:"
+            android:text="@string/phonenumberHead"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,24 +141,26 @@
 
         <EditText
             android:id="@+id/text_phone"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Enter your phone number"
+            android:hint="@string/enter_your_phone_number"
             android:inputType="phone"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_phone"
             app:layout_constraintStart_toEndOf="@+id/title_phone" />
 
         <TextView
             android:id="@+id/title_address"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Address:"
+            android:text="@string/addressHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +173,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Enter your address"
+            android:hint="@string/enter_your_address"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:inputType="textPostalAddress"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_address"
             app:layout_constraintStart_toEndOf="@+id/title_address" />
@@ -175,7 +186,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="Email Address:"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="@string/email_address_head"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -188,7 +200,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Enter your Email"
+            android:hint="@string/enter_your_email"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:inputType="textEmailAddress"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_email"
             app:layout_constraintStart_toEndOf="@+id/title_email" />
@@ -200,7 +213,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:text="IC Number:"
+            android:text="@string/ic_number_Head"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +227,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="Enter your IC number"
+            android:hint="@string/enter_your_ic_number"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_ic"
             app:layout_constraintStart_toEndOf="@+id/title_ic" />
@@ -228,7 +243,7 @@
             android:layout_marginRight="24dp"
             android:layout_marginBottom="48dp"
             android:onClick="confirm"
-            android:text="Confirm Information"
+            android:text="@string/confirm_information"
             app:backgroundTint="#43ABC9"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

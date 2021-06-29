@@ -14,8 +14,8 @@
         >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="383dp"
+            android:layout_height="241dp"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
@@ -30,7 +30,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="24dp"
 
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:includeFontPadding="false"
                 android:text="@string/astrazeneca_vaccine"
                 android:textColor="@color/black"
@@ -44,12 +44,13 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:text="@string/Astra_info"
                 android:textColor="@color/black" />
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/Astra_web"
@@ -58,14 +59,13 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="20dp"
                     android:onClick="AstraWeb"
                     android:text="@string/more_info_button"
                     app:backgroundTint="#43ABC9" />
 
                 <Button
                     android:id="@+id/AstraQuizButton"
-                    android:layout_width="185dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginLeft="24dp"
@@ -78,11 +78,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="391dp"
-            android:layout_height="wrap_content"
+            android:layout_width="383dp"
+            android:layout_height="230dp"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/shapes"
             android:orientation="vertical">
 
@@ -93,7 +93,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:text="@string/Pfizer_vaccine"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -103,6 +103,7 @@
                 android:id="@+id/pfizer_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="16dp"
@@ -140,8 +141,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="392dp"
-            android:layout_height="wrap_content"
+            android:layout_width="387dp"
+            android:layout_height="220dp"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
@@ -156,7 +157,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:text="@string/sinopharm_vaccine"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -169,12 +170,13 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/alegreya_sans_sc_medium"
                 android:text="@string/Sinopharm_info"
                 android:textColor="@color/black" />
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/Sinopharm_web"
