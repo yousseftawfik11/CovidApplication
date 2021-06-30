@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -124,5 +125,6 @@ public class ConfirmationFormActivity extends AppCompatActivity {
     public void homepage(View view) {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        Toast.makeText(this, R.string.SuccessfulRegistration, Toast.LENGTH_LONG).show();
     }
 }
