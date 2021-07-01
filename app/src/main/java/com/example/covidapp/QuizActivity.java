@@ -188,13 +188,13 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    public void fillForm(View view) {
+    public void fillForm(View view) {//Takes user to form activity
         Intent intent = new Intent(this,FormActivity.class);
         intent.putExtra("QuestionListNumber", listNumber);
         startActivity(intent);
     }
 
-    public void returnHome(View view) {
+    public void returnHome(View view) {//takes user back to homepage
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
