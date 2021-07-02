@@ -26,8 +26,8 @@ public class FormActivity extends AppCompatActivity {
         //to show the icon in the title bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setTitle("Covid App");
-        actionBar.setIcon(R.drawable.mlogo);
+        actionBar.setTitle("My Vaccine");
+        actionBar.setIcon(R.drawable.logo2);
         //getSupportActionBar().setDisplayShowTitleEnabled(true);
         //setTitle("My new title");
 
