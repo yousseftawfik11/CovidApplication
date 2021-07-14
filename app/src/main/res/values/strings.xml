@@ -67,4 +67,10 @@
     <string name="PfizerMinAge">Pfizer is not recommended for people under 12 years old.</string>
     <string name="SinoMinAge">Sinopharm is not recommended for people under 18 years old.</string>
     <string name="SuccessfulRegistration">You have been successfully registered!</string>
+
+
+    //Assignment 3 parts
+    <string name="acessBtnRegister">Register</string>
+    <string name="acessBtnLogin">Login</string>
+    <string name="acessBtnGuest">Continue As Guest</string>
 </resources>
