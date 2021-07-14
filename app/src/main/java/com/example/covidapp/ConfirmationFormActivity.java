@@ -42,7 +42,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
 
         myTitle= findViewById(R.id.vaccine_title);
 
-
+        // To determine the header of the form
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
         if (listNumber == 1){
             myTitle.setText("Astrazeneca Confirmation Form");
@@ -56,6 +56,8 @@ public class ConfirmationFormActivity extends AppCompatActivity {
             myTitle.setText("Sinopharm Confirmation Form");
 
         }
+
+
 
         nameC= findViewById(R.id.conf_name);
         GenderC= findViewById(R.id.conf_gender);
@@ -88,14 +90,14 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ICnumC.setText(PICnum);
         ageC.setText(P_age);
 
-
+        //determining the date of the first does by adding 7 days to the day the form is filled
         DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, 7);
         String result = currentDate.format(c.getTime());
         First_date.setText(result);
 
-
+        //determining the second dose date depending on the selected vaccine in the beginning of the app
         if(listNumber==1){
 
             DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
