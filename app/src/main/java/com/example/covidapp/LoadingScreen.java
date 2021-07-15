@@ -23,7 +23,7 @@ public class LoadingScreen extends AppCompatActivity {
             @Override
             public void run() {
                 finish();
-                startActivity(new Intent(LoadingScreen.this,MainActivity.class));
+                startActivity(new Intent(LoadingScreen.this,AccessActivity.class));
             }
         };
         Timer opening = new Timer();
@@ -33,6 +33,7 @@ public class LoadingScreen extends AppCompatActivity {
         imgFrame.setBackgroundResource(R.drawable.loading);
         loading=(AnimationDrawable)imgFrame.getBackground();
         loading.start();
+        //zeby mango
 
 
         //to show the icon in the title bar
