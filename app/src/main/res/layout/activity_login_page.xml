@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="14dp"
+            android:onClick="confirmLogin"
             android:text="Log In"
             app:backgroundTint="#35F809" />
     </LinearLayout>
