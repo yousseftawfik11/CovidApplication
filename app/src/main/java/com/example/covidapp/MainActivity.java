@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    //DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#107491"));
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
+
+        //dbHelper = new DatabaseHelper(this);
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {

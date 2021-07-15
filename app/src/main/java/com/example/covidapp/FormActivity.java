@@ -14,9 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
-    private TextView myTitle, myName, myAge, myPhone, myAddress, myEmail, myIC;
+    private TextView myTitle, myName, myAge, myPhone, myAddress, myEmail, myIC, myUsername, myPassword, myCPassword, myVaccine, myFirstDose, mySecondDose;
     private RadioGroup myGender;
     int listNumber;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class FormActivity extends AppCompatActivity {
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        myTitle=(TextView)findViewById(R.id.FormTitle);
+        /*myTitle=(TextView)findViewById(R.id.FormTitle);
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
         if (listNumber == 1){
             myTitle.setText("Astrazeneca User Form");
@@ -47,7 +48,7 @@ public class FormActivity extends AppCompatActivity {
         }
         else{
             myTitle.setText("Sinopharm User Form");
-        }
+        }*/
         myName = findViewById(R.id.text_name);
         myGender = findViewById(R.id.radio_gender);
         myAge = findViewById(R.id.text_age);
@@ -55,6 +56,15 @@ public class FormActivity extends AppCompatActivity {
         myAddress = findViewById(R.id.text_address);
         myEmail = findViewById(R.id.text_email);
         myIC = findViewById(R.id.text_ic);
+
+        //New things for Ass3
+        myUsername = findViewById(R.id.text_username);
+        myPassword = findViewById(R.id.text_password);
+        myCPassword = findViewById(R.id.text_cpassword);
+        myVaccine = findViewById(R.id.text_vaccine);
+        myFirstDose = findViewById(R.id.text_dose1);
+        mySecondDose = findViewById(R.id.text_dose2);
+        dbHelper = new DatabaseHelper(this);
     }
 
     public void confirm(View view) {
@@ -69,7 +79,7 @@ public class FormActivity extends AppCompatActivity {
             myAge.setError("Please enter your age");
         }
         else{//if an age is entered
-            ageVal(listNumber, myAge);
+            //ageVal(listNumber, myAge);
         }
         //Check for a number
         if (TextUtils.isEmpty(myPhone.getText())){
@@ -96,13 +106,34 @@ public class FormActivity extends AppCompatActivity {
         }
         else{//Doesn't show error
         }
+        //Check for username
+        if(TextUtils.isEmpty(myUsername.getText())){
+            myUsername.setError("Please enter a username");
+        }
+        else {//Doesn't show error
+        }
+        //Checks for password
+        if(TextUtils.isEmpty(myPassword.getText())){
+            myPassword.setError("Please enter a password");
+        }
+        else {//Doesn't show error
+        }
+        //Checks for a confirmation password
+        if(TextUtils.isEmpty(myCPassword.getText())){
+            myCPassword.setError("Please enter the password another time");
+        }
+        else {//Doesn't show error
+        }
         //checks that all fields are filled
-        if(TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getError()) &&
+        if(TextUtils.isEmpty(myUsername.getText()) == false && TextUtils.isEmpty(myPassword.getText()) == false &&
+                TextUtils.isEmpty(myCPassword.getText()) == false && TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getError()) &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
                 TextUtils.isEmpty(myEmail.getError()) && TextUtils.isEmpty(myIC.getText()) == false){
+            /*
             //Proceeding to next activity
             Intent intent = new Intent(this,ConfirmationFormActivity.class);
-            intent.putExtra("QuestionListNumber", listNumber);
+            //intent.putExtra("QuestionListNumber", listNumber);
+
             //storing user values in variables
             String cName = myName.getText().toString();
             String cAge = myAge.getText().toString();
@@ -110,6 +141,7 @@ public class FormActivity extends AppCompatActivity {
             String cAddress = myAddress.getText().toString();
             String cEmail = myEmail.getText().toString();
             String cIC = myIC.getText().toString();
+
 
             //Sending values to next activity
             intent.putExtra("name", cName);
@@ -122,15 +154,65 @@ public class FormActivity extends AppCompatActivity {
             if (myGender.getCheckedRadioButtonId() == R.id.rbMale){
                 intent.putExtra("gender", "Male");
             }
-            else /*if (myGender.getCheckedRadioButtonId()==1)*/{
+            else {
                 intent.putExtra("gender", "Female");
             }
 
-            startActivity(intent);
+            startActivity(intent);*/
+
+            //New things for Ass3
+            String ruser = myUsername.getText().toString();
+            String rpw = myPassword.getText().toString();
+            String rcpw = myCPassword.getText().toString();
+            String rname = myName.getText().toString();
+            String rgender;
+            if (myGender.getCheckedRadioButtonId() == R.id.rbMale){
+                rgender = "Male";
+            }
+            else {
+                rgender = "Female";
+            }
+            String rdob = myAge.getText().toString();
+            String rphone = myPhone.getText().toString();
+            String raddress = myAddress.getText().toString();
+            String remail = myEmail.getText().toString();
+            String ric = myIC.getText().toString();
+
+
+            if (rpw.equals(rcpw)){
+                boolean taken = dbHelper.checkUsername(ruser);
+                if(!taken){
+                    boolean insertSuccessfully = dbHelper.insert(ruser, rpw, Boolean.FALSE, rname, rgender, rdob, rphone, raddress, remail, ric, 0, 4, "None", "None");//Adding user data to the database
+                    if (insertSuccessfully){
+                        displayToast("Registered Successfully");
+                        myUsername.setText("");
+                        myPassword.setText("");
+                        myCPassword.setText("");
+                        Intent intent = new Intent(this,MainActivity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        displayToast("Error");
+                    }
+                }
+                else {
+                    myUsername.setError("Username has been taken, please choose another username");
+                    myUsername.setText("");
+                }
+            }
+            else {
+                myPassword.setError("Passwords don't match");
+                myPassword.setText("");
+                myCPassword.setText("");
+            }
         }
         else {
             //stays on the same page
         }
+    }
+
+    public void displayToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     private void emailVal (TextView email){//Ensures that the user enters a valid email
@@ -141,7 +223,7 @@ public class FormActivity extends AppCompatActivity {
         }
     }
 
-    private void ageVal(int vacType, TextView age){//ensures that the user is within the allowed age
+    /*private void ageVal(int vacType, TextView age){//ensures that the user is within the allowed age
         int checkAge = Integer.parseInt(age.getText().toString());//Converting the number to an integer
         if (vacType == 1){//Astrazeneca
             if(checkAge<18){
@@ -161,10 +243,5 @@ public class FormActivity extends AppCompatActivity {
                 Toast.makeText(this, R.string.SinoMinAge, Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    public void returnHome(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
+    }*/
 }
