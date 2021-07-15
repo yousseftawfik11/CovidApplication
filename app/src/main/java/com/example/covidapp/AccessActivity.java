@@ -18,4 +18,14 @@ public class AccessActivity extends AppCompatActivity {
         Intent intent = new Intent(this,FormActivity.class);
         startActivity(intent);
     }
+
+    public void myLogin(View view) {
+        Intent intent = new Intent(this,LoginPage.class);
+        startActivity(intent);
+    }
+
+    public void myGuestHome(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }
