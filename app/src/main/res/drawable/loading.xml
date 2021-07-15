@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+
+
+    <item android:drawable="@drawable/first" android:duration="200"/>
+    <item android:drawable="@drawable/twoo" android:duration="200"/>
+    <item android:drawable="@drawable/threee" android:duration="200"/>
+    <item android:drawable="@drawable/fourr" android:duration="200"/>
+    <item android:drawable="@drawable/fifth" android:duration="200"/>
+    <item android:drawable="@drawable/mlogo" android:duration="300"/>
+</animation-list>
