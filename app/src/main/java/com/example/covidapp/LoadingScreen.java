@@ -33,6 +33,7 @@ public class LoadingScreen extends AppCompatActivity {
         imgFrame.setBackgroundResource(R.drawable.loading);
         loading=(AnimationDrawable)imgFrame.getBackground();
         loading.start();
+        //zeby mango
 
 
         //to show the icon in the title bar
