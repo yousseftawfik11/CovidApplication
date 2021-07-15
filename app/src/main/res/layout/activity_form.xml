@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="381dp"
-        android:layout_height="607dp"
+        android:layout_height="700dp"
         android:background="@drawable/shapes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,13 +20,83 @@
             android:id="@+id/FormTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="@string/registration_form_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:fontFamily="@font/alegreya_sans_sc_medium"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:text="Username:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
+
+        <EditText
+            android:id="@+id/text_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter Your Username"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_username"
+            app:layout_constraintStart_toEndOf="@+id/title_username" />
+
+        <TextView
+            android:id="@+id/title_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:text="Password:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_username" />
+
+        <EditText
+            android:id="@+id/text_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter Your Password"
+            android:inputType="textPassword"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_password"
+            app:layout_constraintStart_toEndOf="@+id/title_password" />
+
+        <TextView
+            android:id="@+id/title_cpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:text="Confirm Password:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_password" />
+
+        <EditText
+            android:id="@+id/text_cpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:hint="Enter Password Again"
+            android:inputType="textPassword"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_cpassword"
+            app:layout_constraintStart_toEndOf="@+id/title_cpassword" />
 
         <TextView
             android:id="@+id/title_name"
@@ -35,12 +105,12 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/name_header"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FormTitle"
-            android:fontFamily="@font/alegreya_sans_sc_medium"/>
+            app:layout_constraintTop_toBottomOf="@+id/title_cpassword" />
 
         <EditText
             android:id="@+id/text_name"
@@ -49,8 +119,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="@string/name"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:hint="@string/name"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_name"
             app:layout_constraintStart_toEndOf="@+id/title_name" />
@@ -61,9 +131,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/genderHead"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="@string/genderHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,10 +147,10 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             android:checkedButton="@id/rbMale"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:orientation="horizontal"
             app:layout_constraintStart_toEndOf="@+id/title_gender"
-            app:layout_constraintTop_toBottomOf="@+id/text_name"
-            android:fontFamily="@font/alegreya_sans_sc_medium">
+            app:layout_constraintTop_toBottomOf="@+id/text_name">
 
             <RadioButton
                 android:id="@+id/rbMale"
@@ -100,12 +170,12 @@
 
         <TextView
             android:id="@+id/title_age"
-            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/ageHead"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -119,9 +189,9 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="@string/enter_your_age"
             android:fontFamily="@font/alegreya_sans_sc_medium"
-            android:inputType="number"
+            android:hint="@string/enter_your_age"
+            android:inputType="date"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_age"
             app:layout_constraintStart_toEndOf="@+id/title_age" />
 
@@ -131,9 +201,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/phonenumberHead"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="@string/phonenumberHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -141,12 +211,12 @@
 
         <EditText
             android:id="@+id/text_phone"
-            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:hint="@string/enter_your_phone_number"
             android:inputType="phone"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_phone"
@@ -154,12 +224,12 @@
 
         <TextView
             android:id="@+id/title_address"
-            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/addressHead"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -173,8 +243,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="@string/enter_your_address"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:hint="@string/enter_your_address"
             android:inputType="textPostalAddress"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_address"
             app:layout_constraintStart_toEndOf="@+id/title_address" />
@@ -185,7 +255,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/email_address_head"
             android:textColor="@color/black"
@@ -200,8 +270,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="@string/enter_your_email"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_email"
             app:layout_constraintStart_toEndOf="@+id/title_email" />
@@ -212,9 +282,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/ic_number_Head"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:text="@string/ic_number_Head"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -227,8 +297,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:ems="10"
-            android:hint="@string/enter_your_ic_number"
             android:fontFamily="@font/alegreya_sans_sc_medium"
+            android:hint="@string/enter_your_ic_number"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/title_ic"
             app:layout_constraintStart_toEndOf="@+id/title_ic" />
@@ -245,27 +315,73 @@
             android:onClick="confirm"
             android:text="@string/confirm_information"
             app:backgroundTint="#35F809"
-            app:layout_constraintBottom_toTopOf="@+id/button_home"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="16dp"
-            android:onClick="returnHome"
-            android:text="@string/homepage_button_text"
-            app:backgroundTint="#43ABC9"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/title_vaccine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:text="Vaccine:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_ic" />
+
+        <TextView
+            android:id="@+id/text_vaccine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="None"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_vaccine"
+            app:layout_constraintStart_toEndOf="@+id/title_vaccine" />
+
+        <TextView
+            android:id="@+id/title_dose1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:text="First Dose:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_vaccine" />
+
+        <TextView
+            android:id="@+id/text_dose1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="None"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_dose1"
+            app:layout_constraintStart_toEndOf="@+id/title_dose1" />
+
+        <TextView
+            android:id="@+id/title_dose2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:text="Second Dose:"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_dose1"
+            app:layout_constraintStart_toEndOf="@+id/text_dose1" />
+
+        <TextView
+            android:id="@+id/text_dose2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="None"
+            app:layout_constraintBaseline_toBaselineOf="@+id/title_dose1"
+            app:layout_constraintStart_toEndOf="@+id/title_dose2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
