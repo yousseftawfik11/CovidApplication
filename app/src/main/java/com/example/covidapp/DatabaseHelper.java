@@ -151,15 +151,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return userID;
     }
 
-    public void updateVaccine(String id, int vaccineNumber){
+    public void updateVaccine(String id, int vaccineNumber, String firstDose, String secondDose){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("vaccine", vaccineNumber);
+        contentValues.put("firstDose", firstDose);
+        contentValues.put("secondDose", secondDose);
         long result = db.update("user",contentValues,"id=?", new String[]{id});
     }
 
     public Cursor userProfileInfo(String username){
-        //sql query to display all data in database
+        /*//sql query to display all data in database
         String query ="SELECT * FROM user WHERE username=?";
         //creating database object
         SQLiteDatabase db = this.getReadableDatabase();
@@ -168,6 +170,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(db !=null){//if database is not null
             cursor = db.rawQuery(query,null);//execute the query and storing the result in cursor
         }
-        return cursor;//will contain all the data from the table
+        return cursor;//will contain all the data from the table*/
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (db != null){
+            cursor = db.rawQuery("SELECT * FROM user WHERE username=?",
+                    new String[] {username});
+        }
+        return cursor;
     }
 }

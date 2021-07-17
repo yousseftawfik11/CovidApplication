@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton, mFalseButton, mNextButton, mFormButton, mHomeButton;
     private TextView mQuestionTextView;
@@ -200,12 +204,17 @@ public class QuizActivity extends AppCompatActivity {
         startActivity(intent);
     }*/
 
-    public void returnHome(View view) {//takes user back to homepage
+    /*public void returnHome(View view) {//takes user back to homepage
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
-    }
+    }*/
 
     public void bookVaccine(View view) {
+        //Getting today's date to add the 7 days (this is a rule we made to give the first does to user after 7 days of registration)
+        DateFormat currentDate = new SimpleDateFormat("yyyy/MM/dd");//format
+        Calendar c = Calendar.getInstance();//today's date
+        c.add(Calendar.DAY_OF_MONTH, 7);//adding 7 days
+        String dose1 = currentDate.format(c.getTime());//Storing result
 
 
         if (user == null){
@@ -216,16 +225,43 @@ public class QuizActivity extends AppCompatActivity {
         else {
             userID = String.valueOf(db.getID(user));
             if (listNumber == 1){
-                db.updateVaccine(userID,1);
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.MONTH,3);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,1, dose1, dose2);
                 Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                startActivity(intent);
             }
             else if (listNumber == 2){
-                db.updateVaccine(userID,2);
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.DAY_OF_MONTH,21);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,2, dose1, dose2);
                 Toast.makeText(this, "Pfizer Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                startActivity(intent);
             }
             else {
-                db.updateVaccine(userID,3);
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.DAY_OF_MONTH,21);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,3, dose1, dose2);
                 Toast.makeText(this, "Sinopharm Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                startActivity(intent);
             }
         }
 
