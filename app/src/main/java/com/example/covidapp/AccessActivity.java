@@ -24,7 +24,7 @@ public class AccessActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void myGuestHome(View view) {
+    public void myGuestHome(View view) {//Takes guest user to homepage but sends an intent value to prevent them from booking vaccine unless they are registered
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }

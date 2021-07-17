@@ -151,5 +151,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return userID;
     }
 
-
+    public void updateVaccine(String id, int vaccineNumber){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("vaccine", vaccineNumber);
+        long result = db.update("user",contentValues,"id=?", new String[]{id});
+    }
 }

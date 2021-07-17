@@ -16,6 +16,8 @@ public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton, mFalseButton, mNextButton, mFormButton, mHomeButton;
     private TextView mQuestionTextView;
     int listNumber;//a number representing which list to display (sent from intent)
+    String user, userID;
+    DatabaseHelper db;
 
     //Array to save the Astrazeneca questions into
     private Questions[] AstraQuestionArray = new Questions[]{
@@ -47,6 +49,8 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        db = new DatabaseHelper(this);
 
         //to show the icon in the title bar
         ActionBar actionBar = getSupportActionBar();
@@ -83,6 +87,8 @@ public class QuizActivity extends AppCompatActivity {
             updateSinoQuestions();
         }
 
+        //Getting username from login page
+        user = getIntent().getStringExtra("username");
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,14 +194,41 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    public void fillForm(View view) {//Takes user to form activity
+    /*public void fillForm(View view) {//Takes user to form activity
         Intent intent = new Intent(this,FormActivity.class);
         intent.putExtra("QuestionListNumber", listNumber);
         startActivity(intent);
-    }
+    }*/
 
     public void returnHome(View view) {//takes user back to homepage
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+    }
+
+    public void bookVaccine(View view) {
+
+
+        if (user == null){
+            Intent intent = new Intent(this,AccessActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "You must be registered", Toast.LENGTH_LONG).show();
+        }
+        else {
+            userID = String.valueOf(db.getID(user));
+            Toast.makeText(this, userID, Toast.LENGTH_SHORT).show();
+            if (listNumber == 1){
+                db.updateVaccine(userID,1);
+                Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
+            }
+            else if (listNumber == 2){
+                db.updateVaccine(userID,2);
+                Toast.makeText(this, "Pfizer Vaccine Booked", Toast.LENGTH_LONG).show();
+            }
+            else {
+                db.updateVaccine(userID,3);
+                Toast.makeText(this, "Sinopharm Vaccine Booked", Toast.LENGTH_LONG).show();
+            }
+        }
+
     }
 }

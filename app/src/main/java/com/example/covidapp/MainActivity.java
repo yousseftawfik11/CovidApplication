@@ -11,11 +11,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //DatabaseHelper dbHelper;
 
     Button adminbtn, moreinfo;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         else if(role_id== 0)
             adminbtn.setVisibility(View.INVISIBLE);
 
+        user = getIntent().getStringExtra("username");
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
@@ -73,18 +76,21 @@ public class MainActivity extends AppCompatActivity {
     public void SinoQuiz(View view) {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber", 3);
+        next.putExtra("username", user);
         startActivity(next);
     }
 
     public void AstraQuiz(View view) {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber",1);
+        next.putExtra("username", user);
         startActivity(next);
     }
 
     public void PfizerQuiz(View view) {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber",2);
+        next.putExtra("username", user);
         startActivity(next);
     }
 
