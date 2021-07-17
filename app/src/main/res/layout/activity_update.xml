@@ -8,23 +8,24 @@
     tools:context=".FormActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="381dp"
-        android:layout_height="556dp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="373dp"
+        android:layout_height="411dp"
         android:background="@drawable/shapes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434">
+        app:layout_constraintVertical_bias="0.29">
 
         <TextView
             android:id="@+id/FormTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
-            android:text="@string/registration_form_title"
+            android:text="Update User"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,208 +36,185 @@
             android:id="@+id/title_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="Username:"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_username2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="64dp"
             android:ems="10"
             android:hint="Enter Your Username"
             android:inputType="textPersonName"
-            app:layout_constraintBaseline_toBaselineOf="@+id/title_username"
-            app:layout_constraintStart_toEndOf="@+id/title_username" />
+            app:layout_constraintStart_toEndOf="@+id/title_username"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/name_header"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/title_username" />
 
         <EditText
             android:id="@+id/text_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:hint="@string/name"
             android:inputType="textPersonName"
-            app:layout_constraintBaseline_toBaselineOf="@+id/title_name"
-            app:layout_constraintStart_toEndOf="@+id/title_name" />
+            app:layout_constraintStart_toEndOf="@+id/title_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_username2" />
 
         <TextView
             android:id="@+id/title_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/ageHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/title_name" />
 
         <EditText
             android:id="@+id/text_age2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:ems="10"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:hint="@string/enter_your_age"
             android:inputType="date"
-            app:layout_constraintBaseline_toBaselineOf="@+id/title_age"
-            app:layout_constraintStart_toEndOf="@+id/title_age" />
+            app:layout_constraintStart_toEndOf="@+id/title_age"
+            app:layout_constraintTop_toBottomOf="@+id/text_name2" />
 
         <TextView
             android:id="@+id/title_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="22dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="@string/phonenumberHead"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_age2" />
+            app:layout_constraintTop_toBottomOf="@+id/title_age" />
 
         <EditText
             android:id="@+id/text_phone2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
             android:ems="10"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:hint="@string/enter_your_phone_number"
             android:inputType="phone"
-            app:layout_constraintBaseline_toBaselineOf="@+id/title_phone"
-            app:layout_constraintStart_toEndOf="@+id/title_phone" />
+            app:layout_constraintStart_toEndOf="@+id/title_phone"
+            app:layout_constraintTop_toBottomOf="@+id/text_age2" />
 
         <Button
             android:id="@+id/button_update"
-            android:layout_width="0dp"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="140dp"
+            android:layout_marginTop="20dp"
             android:onClick="confirm"
             android:text="Update"
             app:backgroundTint="#35F809"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rolesGroup" />
 
         <TextView
             android:id="@+id/etID2"
             android:layout_width="35dp"
             android:layout_height="16dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginEnd="56dp"
-            android:layout_marginRight="56dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="65dp"
             android:ems="10"
             android:hint="ID"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/id_head"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.12" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/id_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="264dp"
-            android:layout_marginLeft="264dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:text="ID:"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.115" />
+            app:layout_constraintStart_toEndOf="@+id/text_username2"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Role_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginBottom="280dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
-            android:text="Role"
+            android:text="Role:"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/etRole2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="268dp"
-            android:ems="10"
-            android:hint="Role"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.632"
-            app:layout_constraintStart_toEndOf="@+id/Role_header" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_phone" />
 
         <Button
             android:id="@+id/button_delete"
-            android:layout_width="345dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
             android:text="Delete"
-            app:backgroundTint="#35F809"
+            app:backgroundTint="@android:color/holo_red_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_update"
-            app:layout_constraintVertical_bias="0.226" />
+            app:layout_constraintTop_toBottomOf="@+id/button_update" />
 
         <RadioGroup
             android:id="@+id/rolesGroup"
             android:layout_width="wrap_content"
             android:layout_height="44dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etRole2">
+            app:layout_constraintStart_toEndOf="@+id/Role_header"
+            app:layout_constraintTop_toBottomOf="@+id/text_phone2">
 
             <RadioButton
                 android:id="@+id/adminRB"
@@ -252,6 +230,25 @@
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="579dp"
+        android:layout_height="403dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:srcCompat="@drawable/whitecirlce" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="551dp"
+        android:layout_height="347dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/whitecirlce" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
