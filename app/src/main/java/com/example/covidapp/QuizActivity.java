@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton, mFalseButton, mNextButton, mFormButton, mHomeButton;
     private TextView mQuestionTextView;
-    int listNumber;//a number representing which list to display (sent from intent)
+    int listNumber, role_id;//a number representing which list to display (sent from intent)
     String user, userID;
     DatabaseHelper db;
 
@@ -93,6 +93,7 @@ public class QuizActivity extends AppCompatActivity {
 
         //Getting username from login page
         user = getIntent().getStringExtra("username");
+        role_id = getIntent().getIntExtra("role",0);
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,6 +236,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this,MainActivity.class);
                 intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
                 startActivity(intent);
             }
             else if (listNumber == 2){
@@ -248,6 +250,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this,MainActivity.class);
                 intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
                 startActivity(intent);
             }
             else {
@@ -261,6 +264,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this,MainActivity.class);
                 intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
                 startActivity(intent);
             }
         }

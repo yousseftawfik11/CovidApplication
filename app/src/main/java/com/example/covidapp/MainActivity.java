@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button adminbtn, moreinfo;
     String user;
     Integer test;
+    int role_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        int role_id = getIntent().getIntExtra("role",0);
+        role_id = getIntent().getIntExtra("role",0);
 
         if(role_id == 1){
             adminbtn.setVisibility(View.VISIBLE);
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber", 3);
         next.putExtra("username", user);
+        next.putExtra("role", role_id);
         startActivity(next);
     }
 
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber",1);
         next.putExtra("username", user);
+        next.putExtra("role", role_id);
         startActivity(next);
     }
 
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber",2);
         next.putExtra("username", user);
+        next.putExtra("role", role_id);
         startActivity(next);
     }
 
@@ -106,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
     public void goProfile(View view) {
         Intent next = new Intent(this, ConfirmationFormActivity.class);
         next.putExtra("username", user);
+        next.putExtra("role", role_id);
         startActivity(next);
+        //a7amos
     }
 }
