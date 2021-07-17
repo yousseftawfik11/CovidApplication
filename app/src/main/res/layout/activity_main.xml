@@ -215,6 +215,15 @@
                 android:text="To Control Center"
                 android:textColor="@color/black"
                 app:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/profile_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="goProfile"
+                android:text="Profile"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

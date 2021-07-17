@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,13 +14,16 @@ import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 public class ConfirmationFormActivity extends AppCompatActivity {
 
-    private TextView nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date,Second_date;
+    private TextView usernameC,nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date,Second_date;
     int listNumber;
+    String user;
+    DatabaseHelper db;
+    ArrayList<String> profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +44,11 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        myTitle= findViewById(R.id.vaccine_title);
+        //myTitle= findViewById(R.id.vaccine_title);
 
         // To determine the header of the form
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
-        if (listNumber == 1){
+        /*if (listNumber == 1){
             myTitle.setText("Astrazeneca Confirmation Form");
 
         }
@@ -55,10 +59,11 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         else{
             myTitle.setText("Sinopharm Confirmation Form");
 
-        }
-
-
-
+        }*/
+        user = getIntent().getStringExtra("username");
+        db = new DatabaseHelper(this);
+        //profile = new ArrayList<>();
+        usernameC = findViewById(R.id.conf_Username);
         nameC= findViewById(R.id.conf_name);
         GenderC= findViewById(R.id.conf_gender);
         phoneNumC= findViewById(R.id.conf_phone);
@@ -68,8 +73,9 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ageC= findViewById(R.id.conf_age);
         First_date =findViewById(R.id.firstDose_date);
         Second_date= findViewById(R.id.secondDose_date);
+        loadProfile();
 
-        String Pname= getIntent().getStringExtra("name");
+        /*String Pname= getIntent().getStringExtra("name");
 
         String Pnum = getIntent().getStringExtra("phone");
         String PAdress= getIntent().getStringExtra("address");
@@ -79,16 +85,13 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         String genderNum= getIntent().getStringExtra("gender");
 
 
-
-
-
         nameC.setText(Pname);
         GenderC.setText(genderNum);
         phoneNumC.setText(Pnum);
         addressC.setText(PAdress);
         EmailC.setText(PEmail);
         ICnumC.setText(PICnum);
-        ageC.setText(P_age);
+        ageC.setText(P_age);*/
 
         //determining the date of the first does by adding 7 days to the day the form is filled
         DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
@@ -120,6 +123,26 @@ public class ConfirmationFormActivity extends AppCompatActivity {
             String results = CD.format(c.getTime());
             Second_date.setText(results);
         }
+
+    }
+
+    private void loadProfile() {
+        usernameC.setText(user);
+        Cursor cursor = db.userProfileInfo(user);
+        while(cursor.moveToNext()) {
+            String name = cursor.getString(4);
+        }
+        /*if(cursor.getCount()==0){
+            Toast.makeText(this,"User Profile not found", Toast.LENGTH_SHORT).show();
+        }else{
+            //while (cursor.moveToNext()){
+                //profile.add(cursor.getString(0));
+                usernameC.setText(user);
+                String name = cursor.getString(4);
+                nameC.setText(name);
+            //}
+        }*/
+
 
     }
 
