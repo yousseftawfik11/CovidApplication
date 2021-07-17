@@ -53,11 +53,10 @@ public class LoginPage extends AppCompatActivity {
             username.setText("");
             password.setText("");
         }
-
-
-
     }
 
-
-
+    public void loginGoRegister(View view) {
+        Intent intent = new Intent(this,FormActivity.class);
+        startActivity(intent);
+    }
 }

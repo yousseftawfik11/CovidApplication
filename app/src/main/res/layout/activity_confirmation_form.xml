@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
-            android:text="TextView"
+            android:text="Profile Page"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
