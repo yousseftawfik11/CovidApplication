@@ -189,6 +189,7 @@ public class FormActivity extends AppCompatActivity {
                         myPassword.setText("");
                         myCPassword.setText("");
                         Intent intent = new Intent(this,MainActivity.class);
+                        intent.putExtra("username",ruser);
                         startActivity(intent);
                     }
                     else {

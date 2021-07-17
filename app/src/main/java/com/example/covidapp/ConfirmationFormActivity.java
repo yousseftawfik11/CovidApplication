@@ -93,11 +93,11 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ICnumC.setText(PICnum);
         ageC.setText(P_age);*/
 
-        //determining the date of the first does by adding 7 days to the day the form is filled
-        DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DAY_OF_MONTH, 7);
-        String result = currentDate.format(c.getTime());
+        /*//determining the date of the first does by adding 7 days to the day the form is filled
+        DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");//format
+        Calendar c = Calendar.getInstance();//today's date
+        c.add(Calendar.DAY_OF_MONTH, 7);//adding 7 days
+        String result = currentDate.format(c.getTime());//Storing result
         First_date.setText(result);
 
         //determining the second dose date depending on the selected vaccine in the beginning of the app
@@ -122,16 +122,33 @@ public class ConfirmationFormActivity extends AppCompatActivity {
             c.add(Calendar.DAY_OF_MONTH,21);
             String results = CD.format(c.getTime());
             Second_date.setText(results);
-        }
+        }*/
 
     }
 
-    private void loadProfile() {
+    private void loadProfile() {//Displays the logged in user info
         usernameC.setText(user);
         Cursor cursor = db.userProfileInfo(user);
-        while(cursor.moveToNext()) {
+        while(cursor.moveToNext()) {//extracting info from cursor and displaying it in text view
             String name = cursor.getString(4);
+            String dob = cursor.getString(6);
+            String gender = cursor.getString(5);
+            String phone = cursor.getString(7);
+            String address = cursor.getString(8);
+            String email = cursor.getString(9);
+            String ic = cursor.getString(10);
+            String firstDose = cursor.getString(13);
+            String secondDose = cursor.getString(14);
+            //Displaying info in text view
             nameC.setText(name);
+            ageC.setText(dob);
+            GenderC.setText(gender);
+            phoneNumC.setText(phone);
+            addressC.setText(address);
+            EmailC.setText(email);
+            ICnumC.setText(ic);
+            First_date.setText(firstDose);
+            Second_date.setText(secondDose);
         }
         /*if(cursor.getCount()==0){
             Toast.makeText(this,"User Profile not found", Toast.LENGTH_SHORT).show();
@@ -150,7 +167,8 @@ public class ConfirmationFormActivity extends AppCompatActivity {
 
     public void homepage(View view) {
         Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("username",user);
         startActivity(intent);
-        Toast.makeText(this, R.string.SuccessfulRegistration, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, R.string.SuccessfulRegistration, Toast.LENGTH_LONG).show();
     }
 }
