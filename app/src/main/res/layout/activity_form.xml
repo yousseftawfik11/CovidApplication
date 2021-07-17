@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@+id/FormTitle" />
 
         <EditText
-            android:id="@+id/text_username"
+            android:id="@+id/text_username2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -61,7 +61,7 @@
             android:layout_marginTop="16dp"
             android:text="Password:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_username" />
+            app:layout_constraintTop_toBottomOf="@+id/text_username2" />
 
         <EditText
             android:id="@+id/text_password"
@@ -113,7 +113,7 @@
             app:layout_constraintTop_toBottomOf="@+id/title_cpassword" />
 
         <EditText
-            android:id="@+id/text_name"
+            android:id="@+id/text_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -137,7 +137,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+            app:layout_constraintTop_toBottomOf="@+id/text_name2" />
 
         <RadioGroup
             android:id="@+id/radio_gender"
@@ -150,7 +150,7 @@
             android:fontFamily="@font/alegreya_sans_sc_medium"
             android:orientation="horizontal"
             app:layout_constraintStart_toEndOf="@+id/title_gender"
-            app:layout_constraintTop_toBottomOf="@+id/text_name">
+            app:layout_constraintTop_toBottomOf="@+id/text_name2">
 
             <RadioButton
                 android:id="@+id/rbMale"
@@ -183,7 +183,7 @@
             app:layout_constraintTop_toBottomOf="@+id/radio_gender" />
 
         <EditText
-            android:id="@+id/text_age"
+            android:id="@+id/text_age2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -207,10 +207,10 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_age" />
+            app:layout_constraintTop_toBottomOf="@+id/text_age2" />
 
         <EditText
-            android:id="@+id/text_phone"
+            android:id="@+id/text_phone2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -234,7 +234,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_phone" />
+            app:layout_constraintTop_toBottomOf="@+id/text_phone2" />
 
         <EditText
             android:id="@+id/text_address"
@@ -304,7 +304,7 @@
             app:layout_constraintStart_toEndOf="@+id/title_ic" />
 
         <Button
-            android:id="@+id/button_confirm"
+            android:id="@+id/button_update"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"

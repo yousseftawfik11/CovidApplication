@@ -12,6 +12,7 @@ public class LoginPage extends AppCompatActivity {
     DatabaseHelper dbHelper;
     EditText username, password;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +34,28 @@ public class LoginPage extends AppCompatActivity {
         Boolean loggedIn = dbHelper.checkLogin(user, pass);
         if(loggedIn){
             displayToast("Login successful!");
+            int role_id= dbHelper.getRole(user);
             Intent intent = new Intent(this,MainActivity.class);
+            intent.putExtra("role",role_id);
             startActivity(intent);
+
+            int user_id= dbHelper.getID(user);
+            //this is where the user ID store you can change the destination of the intent as you wish
+            //you could put the user_id as an extra in the first intent and you could redirect it to another activty
+           // Intent intent2 = new Intent(this,MainActivity.class);
+            //intent2.putExtra("user_id", user_id);
+            //startActivity(intent2);
         }
         else {
             displayToast("Invalid username or password!");
             username.setText("");
             password.setText("");
         }
+
+
+
     }
+
+
+
 }
