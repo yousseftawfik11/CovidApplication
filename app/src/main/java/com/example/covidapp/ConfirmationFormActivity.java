@@ -131,6 +131,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         Cursor cursor = db.userProfileInfo(user);
         while(cursor.moveToNext()) {
             String name = cursor.getString(4);
+            nameC.setText(name);
         }
         /*if(cursor.getCount()==0){
             Toast.makeText(this,"User Profile not found", Toast.LENGTH_SHORT).show();
