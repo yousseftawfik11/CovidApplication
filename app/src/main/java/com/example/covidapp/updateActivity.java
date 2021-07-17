@@ -5,18 +5,25 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class updateActivity extends AppCompatActivity {
 
-    EditText username_input, name_input, date_input, phoneNum_input, id_input, role_input;
+    EditText  name_input, date_input, phoneNum_input, role_input;
     String username, name, dob, phoneNum, id, role;
     Button updateBtn, deletebtn;
+    TextView username_input,id_input;
+    RadioGroup rolesRBG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,7 @@ public class updateActivity extends AppCompatActivity {
         role_input = findViewById(R.id.etRole2);
         updateBtn = findViewById(R.id.button_update);
         deletebtn = findViewById(R.id.button_delete);
+        rolesRBG = findViewById(R.id.rolesGroup);
 
         getAndSetIntentData();
 
@@ -43,14 +51,48 @@ public class updateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseHelper mydb= new DatabaseHelper(updateActivity.this);
-                name = name_input.getText().toString().trim();
-                username = username_input.getText().toString().trim();
-                id = id_input.getText().toString().trim();
-                dob = date_input.getText().toString().trim();
-                phoneNum = phoneNum_input.getText().toString().trim();
-                role = role_input.getText().toString().trim();
-                mydb.updateData(name,username,id,dob,phoneNum,role);
+
+                if (TextUtils.isEmpty(name_input.getText())){
+                    name_input.setError("Please enter your name");
+                }
+                else{//Doesn't show error
+                }
+                //Check for a number
+                if (TextUtils.isEmpty(phoneNum_input.getText())){
+                    phoneNum_input.setError("Please enter your phone number");
+                }
+                else {//Doesn't show error
+                }
+                //check role
+                if(TextUtils.isEmpty(role_input.getText())){
+                    role_input.setError("Please enter a role");
+                }
+                else{//Doesn't show error
+                }
+                if(TextUtils.isEmpty(date_input.getText())){
+                    date_input.setError("Please enter a date");
+                }
+                else{//Doesn't show error
+                }
+                //validates the roles for admin creation
+
+
+                //checks that all fields are filled
+                if(TextUtils.isEmpty(name_input.getText()) == false &&
+                        TextUtils.isEmpty(phoneNum_input.getText()) == false &&
+                        TextUtils.isEmpty(role_input.getError()) && TextUtils.isEmpty(date_input.getText()) == false){
+                    DatabaseHelper mydb= new DatabaseHelper(updateActivity.this);
+                    name = name_input.getText().toString().trim();
+                    username = username_input.getText().toString().trim();
+                    id = id_input.getText().toString().trim();
+                    dob = date_input.getText().toString().trim();
+                    phoneNum = phoneNum_input.getText().toString().trim();
+                    role = role_input.getText().toString().trim();
+                    mydb.updateData(name,username,id,dob,phoneNum,role);
+                    finish();
+                }
+
+
             }
         });
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +126,13 @@ public class updateActivity extends AppCompatActivity {
             date_input.setText(dob);
             phoneNum_input.setText(phoneNum);
             role_input.setText(role);
+            if(role.equals("0")){
+                ((RadioButton)rolesRBG.getChildAt(1)).setChecked(true);
+            }
+            else if (role.equals("1")){
+                ((RadioButton) rolesRBG.getChildAt(0)).setChecked(true);
+            }
+
             id_input.setText(id);
 
         }else{
@@ -111,4 +160,54 @@ public class updateActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
+
+    public void confirm2(View.OnClickListener view) {
+        boolean confirmation = false;
+        //Checks for a name
+        if (TextUtils.isEmpty(name_input.getText())){
+            name_input.setError("Please enter your name");
+        }
+        else{//Doesn't show error
+        }
+        //Check for a number
+        if (TextUtils.isEmpty(phoneNum_input.getText())){
+            phoneNum_input.setError("Please enter your phone number");
+        }
+        else {//Doesn't show error
+        }
+        //Check for username
+        if(TextUtils.isEmpty(username_input.getText())){
+            username_input.setError("Please enter a username");
+        }
+        else {//Doesn't show error
+        }
+        //check role
+        if(TextUtils.isEmpty(role_input.getText())){
+            role_input.setError("Please enter a role");
+        }
+        else{//Doesn't show error
+        }
+        if(TextUtils.isEmpty(id_input.getText())){
+            id_input.setError("Please enter a role");
+        }
+        else{//Doesn't show error
+        }
+        //validates the roles for admin creation
+        if(role_input.getText().toString() != "1" || role_input.getText().toString() != "0"){
+            id_input.setError("For role please enter 0 for user and 1 for admin");
+        }
+        else{
+
+        }
+
+        //checks that all fields are filled
+        if(TextUtils.isEmpty(name_input.getText()) == false && TextUtils.isEmpty(name_input.getText()) == false &&
+                TextUtils.isEmpty(phoneNum_input.getText()) == false &&
+                TextUtils.isEmpty(role_input.getError()) && TextUtils.isEmpty(id_input.getText()) == false){
+        //confirmation = true;
+        finish();
+    }
+        //return confirmation;
+    }
 }
+
