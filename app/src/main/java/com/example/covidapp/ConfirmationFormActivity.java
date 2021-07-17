@@ -20,7 +20,7 @@ import java.util.Calendar;
 public class ConfirmationFormActivity extends AppCompatActivity {
 
     private TextView usernameC,nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date,Second_date;
-    int listNumber;
+    int listNumber, role_id;
     String user;
     DatabaseHelper db;
     ArrayList<String> profile;
@@ -61,6 +61,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
 
         }*/
         user = getIntent().getStringExtra("username");
+        role_id =getIntent().getIntExtra("role",0);
         db = new DatabaseHelper(this);
         //profile = new ArrayList<>();
         usernameC = findViewById(R.id.conf_Username);
@@ -168,6 +169,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
     public void homepage(View view) {
         Intent intent = new Intent(this,MainActivity.class);
         intent.putExtra("username",user);
+        intent.putExtra("role",role_id);
         startActivity(intent);
         //Toast.makeText(this, R.string.SuccessfulRegistration, Toast.LENGTH_LONG).show();
     }
