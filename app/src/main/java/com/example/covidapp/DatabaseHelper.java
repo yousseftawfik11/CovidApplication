@@ -157,4 +157,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("vaccine", vaccineNumber);
         long result = db.update("user",contentValues,"id=?", new String[]{id});
     }
+
+    public Cursor userProfileInfo(String username){
+        //sql query to display all data in database
+        String query ="SELECT * FROM user WHERE username=?";
+        //creating database object
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db !=null){//if database is not null
+            cursor = db.rawQuery(query,null);//execute the query and storing the result in cursor
+        }
+        return cursor;//will contain all the data from the table
+    }
 }

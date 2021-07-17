@@ -98,4 +98,10 @@ public class MainActivity extends AppCompatActivity {
         Intent admin = new Intent(this, ControlCenter.class);
         startActivity(admin);
     }
+
+    public void goProfile(View view) {
+        Intent next = new Intent(this, ConfirmationFormActivity.class);
+        next.putExtra("username", user);
+        startActivity(next);
+    }
 }
