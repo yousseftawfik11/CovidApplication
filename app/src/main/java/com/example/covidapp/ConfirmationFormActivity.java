@@ -19,7 +19,8 @@ import java.util.Calendar;
 
 public class ConfirmationFormActivity extends AppCompatActivity {
 
-    private TextView usernameC,nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,First_date,Second_date;
+    private TextView usernameC,nameC,GenderC,myTitle,phoneNumC,addressC,ageC,EmailC,ICnumC,
+            First_date,Second_date, vaccineC;
     int listNumber, role_id;
     String user;
     DatabaseHelper db;
@@ -74,6 +75,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         ageC= findViewById(R.id.conf_age);
         First_date =findViewById(R.id.firstDose_date);
         Second_date= findViewById(R.id.secondDose_date);
+        vaccineC = findViewById(R.id.conf_vaccine);
         loadProfile();
 
         /*String Pname= getIntent().getStringExtra("name");
@@ -140,6 +142,7 @@ public class ConfirmationFormActivity extends AppCompatActivity {
             String ic = cursor.getString(10);
             String firstDose = cursor.getString(13);
             String secondDose = cursor.getString(14);
+            Integer vaccine = cursor.getInt(12);
             //Displaying info in text view
             nameC.setText(name);
             ageC.setText(dob);
@@ -150,6 +153,18 @@ public class ConfirmationFormActivity extends AppCompatActivity {
             ICnumC.setText(ic);
             First_date.setText(firstDose);
             Second_date.setText(secondDose);
+            if (vaccine == 1){
+                vaccineC.setText("AstraZeneca");
+            }
+            else if (vaccine == 2){
+                vaccineC.setText("Pfizer");
+            }
+            else if (vaccine == 3){
+                vaccineC.setText("SinoPharm");
+            }
+            else {
+                vaccineC.setText("None");
+            }
         }
         /*if(cursor.getCount()==0){
             Toast.makeText(this,"User Profile not found", Toast.LENGTH_SHORT).show();

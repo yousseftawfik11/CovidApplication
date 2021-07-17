@@ -210,8 +210,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int month = c.get(Calendar.MONTH) + 1;//We add 1 because the month starts from 0 and not 1
         int day = c.get(Calendar.DAY_OF_MONTH);
         //return userID;
-        return day;
-        //Calendar today = Calendar.getInstance();
-        //Calendar dob = Calendar.getInstance();
+        //return day;
+        Calendar today = Calendar.getInstance();
+        Calendar dob = Calendar.getInstance();
+
+        dob.set(year, month, day);
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        //return today.get(Calendar.DAY_OF_YEAR);//198
+        //return dob.get(Calendar.DAY_OF_YEAR);//203
+        if (today.get(Calendar.MONTH + 1) < dob.get(Calendar.MONTH)){//We add 1 to today's month to fix it, while the dob month is already fixed
+            age = age-1;
+        }
+        else if (today.get(Calendar.MONTH) == dob.get(Calendar.MONTH)){
+            if (dob.get(Calendar.DAY_OF_MONTH) > today.get(Calendar.DAY_OF_MONTH)){
+                age = age-1;
+            }
+        }
+        return age;
     }
 }
