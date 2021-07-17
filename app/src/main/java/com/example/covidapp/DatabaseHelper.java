@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -13,9 +15,12 @@ import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "login.db";
+    private Context context;
 
-    public DatabaseHelper(@Nullable Context context) {
+    DatabaseHelper(@Nullable Context context) {
+
         super(context, DATABASE_NAME, null, 1);
+        this.context = context;
     }
 
     @Override
@@ -78,4 +83,73 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    //creating a method to cursor object
+    Cursor readUsers(){
+        //sql query to display all data in database
+        String query ="SELECT username, name, dob, phoneNumber, role, ID FROM user";
+        //creating database object
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db !=null){//if database is not null
+            cursor = db.rawQuery(query,null);//execute the query and storing the result in cursor
+        }
+        return cursor;//will contain all the data from the table
+    }
+
+    void updateData(String name, String username, String id, String dob, String phonenum, String role){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues(); //to store values inside this object
+        cv.put("name", name);
+        cv.put("username", username);
+        cv.put("ID",id);
+        cv.put("dob",dob);
+        cv.put("phoneNumber", phonenum);
+        cv.put("role",role);
+
+        long result = db.update("user",cv,"id=?", new String[]{id});
+        if(result == -1){
+            Toast.makeText(context,"Failed to update.",Toast.LENGTH_SHORT).show();
+        }else
+            Toast.makeText(context,"Succesfully Updated.",Toast.LENGTH_SHORT).show();
+    }
+
+    void deleteOneRow(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result= db.delete("user","id=?",new String[]{id});
+
+        if(result == -1){
+            Toast.makeText(context,"Failed to Delete.",Toast.LENGTH_SHORT).show();
+        }else
+            Toast.makeText(context,"Succesfully Deleted.",Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    public int getRole(String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT role FROM user WHERE username=?",
+                new String[] {username});
+        int userRole=0 ;
+        while(cursor.moveToNext()) {
+            userRole = cursor.getInt(0);
+        }
+        cursor.close();
+        return userRole;
+    }
+
+    public int getID(String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id FROM user WHERE username=?",
+                new String[] {username});
+        int userID=0 ;
+        while(cursor.moveToNext()) {
+            userID = cursor.getInt(0);
+        }
+        cursor.close();
+        return userID;
+    }
+
+
 }

@@ -201,5 +201,21 @@
                     app:backgroundTint="#43ABC9" />
             </TableRow>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/admin_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="toadmin"
+                android:text="To Control Center"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

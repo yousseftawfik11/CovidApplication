@@ -10,14 +10,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     //DatabaseHelper dbHelper;
+
+    Button adminbtn, moreinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        adminbtn = findViewById(R.id.admin_button);
+        moreinfo = findViewById(R.id.PfizerQuizButton);
 
         //to show the icon in the title bar
         ActionBar actionBar = getSupportActionBar();
@@ -33,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        //dbHelper = new DatabaseHelper(this);
+        int role_id = getIntent().getIntExtra("role",0);
+
+        if(role_id == 1){
+            adminbtn.setVisibility(View.VISIBLE);
+        }
+        else if(role_id== 0)
+            adminbtn.setVisibility(View.INVISIBLE);
+
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
@@ -73,5 +86,10 @@ public class MainActivity extends AppCompatActivity {
         Intent next = new Intent(this,QuizActivity.class);
         next.putExtra("QuestionListNumber",2);
         startActivity(next);
+    }
+
+    public void toadmin(View view) {
+        Intent admin = new Intent(this, ControlCenter.class);
+        startActivity(admin);
     }
 }

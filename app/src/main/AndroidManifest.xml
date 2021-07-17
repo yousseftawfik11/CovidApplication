@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidApp">
-        <activity android:name=".LoginPage"></activity>
+        <activity android:name=".updateActivity" android:parentActivityName=".ControlCenter"/>
+
+
+        <activity android:name=".ControlCenter">
+        </activity>
+        <activity android:name=".LoginPage" />
         <activity android:name=".LoadingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -49,16 +49,16 @@ public class FormActivity extends AppCompatActivity {
         else{
             myTitle.setText("Sinopharm User Form");
         }*/
-        myName = findViewById(R.id.text_name);
+        myName = findViewById(R.id.text_name2);
         myGender = findViewById(R.id.radio_gender);
-        myAge = findViewById(R.id.text_age);
-        myPhone = findViewById(R.id.text_phone);
+        myAge = findViewById(R.id.text_age2);
+        myPhone = findViewById(R.id.text_phone2);
         myAddress = findViewById(R.id.text_address);
         myEmail = findViewById(R.id.text_email);
         myIC = findViewById(R.id.text_ic);
 
         //New things for Ass3
-        myUsername = findViewById(R.id.text_username);
+        myUsername = findViewById(R.id.text_username2);
         myPassword = findViewById(R.id.text_password);
         myCPassword = findViewById(R.id.text_cpassword);
         myVaccine = findViewById(R.id.text_vaccine);
@@ -209,6 +209,7 @@ public class FormActivity extends AppCompatActivity {
         else {
             //stays on the same page
         }
+        finish();
     }
 
     public void displayToast(String message){
