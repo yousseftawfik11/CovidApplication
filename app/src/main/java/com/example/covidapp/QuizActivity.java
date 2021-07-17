@@ -209,13 +209,12 @@ public class QuizActivity extends AppCompatActivity {
 
 
         if (user == null){
-            Intent intent = new Intent(this,AccessActivity.class);
+            Intent intent = new Intent(this,LoginPage.class);
             startActivity(intent);
-            Toast.makeText(this, "You must be registered", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must be Logged In", Toast.LENGTH_LONG).show();
         }
         else {
             userID = String.valueOf(db.getID(user));
-            Toast.makeText(this, userID, Toast.LENGTH_SHORT).show();
             if (listNumber == 1){
                 db.updateVaccine(userID,1);
                 Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
