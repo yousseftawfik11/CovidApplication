@@ -11,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -179,5 +183,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     new String[] {username});
         }
         return cursor;
+    }
+
+    public int calcAge (String username) {
+        Date date = new Date();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT dob FROM user WHERE username=?",
+                new String[] {username});
+        String sDate = new String();
+        while(cursor.moveToNext()) {
+            sDate = cursor.getString(0);
+        }
+        cursor.close();
+        DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        try{
+            date = format.parse(sDate);
+        }
+        catch (ParseException e){
+            e.printStackTrace();
+        }
+        //Now we have the dob as a date object
+        //extracting year, month and day from date
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);//Converting date to calendar type
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH) + 1;//We add 1 because the month starts from 0 and not 1
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        //return userID;
+        return day;
+        //Calendar today = Calendar.getInstance();
+        //Calendar dob = Calendar.getInstance();
     }
 }
