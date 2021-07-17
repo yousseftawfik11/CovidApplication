@@ -25,7 +25,7 @@
     <string name="true_button">TRUE</string>
     <string name="false_button">FALSE</string>
     <string name="next_button">NEXT</string>
-    <string name="form_button_text">Fill Form</string>
+    <string name="form_button_text">Book Vaccine</string>
     <string name="homepage_button_text">Return to homepage!</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>

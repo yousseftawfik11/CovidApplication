@@ -67,7 +67,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:onClick="fillForm"
+            android:onClick="bookVaccine"
             android:text="@string/form_button_text"
             app:backgroundTint="#35F809" />
 

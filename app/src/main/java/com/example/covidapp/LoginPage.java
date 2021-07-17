@@ -37,7 +37,9 @@ public class LoginPage extends AppCompatActivity {
             int role_id= dbHelper.getRole(user);
             Intent intent = new Intent(this,MainActivity.class);
             intent.putExtra("role",role_id);
+            intent.putExtra("username", user);
             startActivity(intent);
+
 
             int user_id= dbHelper.getID(user);
             //this is where the user ID store you can change the destination of the intent as you wish
