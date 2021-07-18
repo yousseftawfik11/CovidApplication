@@ -227,6 +227,51 @@ public class QuizActivity extends AppCompatActivity {
             userID = String.valueOf(db.getID(user));
             getAge = db.calcAge(user);
             if (listNumber == 1){
+
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.MONTH,3);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,1, dose1, dose2);
+                Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
+                startActivity(intent);
+                finish();
+            }
+            else if (listNumber == 2){
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.DAY_OF_MONTH,21);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,2, dose1, dose2);
+                Toast.makeText(this, "Pfizer Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                //Getting second dose date
+                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                c.add(Calendar.DAY_OF_MONTH,21);
+                String dose2 = CD.format(c.getTime());
+
+                db.updateVaccine(userID,3, dose1, dose2);
+                Toast.makeText(this, "Sinopharm Vaccine Booked", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(this,MainActivity.class);
+                intent.putExtra("username", user);
+                intent.putExtra("role",role_id);
+                startActivity(intent);
+                finish();
+
                 if (getAge < 18){//Validating the user is over 18 years which is the allowed age for AstraZeneca vaccine
                     Intent intent = new Intent(this,MainActivity.class);
                     intent.putExtra("username", user);
@@ -294,8 +339,18 @@ public class QuizActivity extends AppCompatActivity {
                     intent.putExtra("role",role_id);
                     startActivity(intent);
                 }
+
             }
         }
 
+    }
+
+
+    public void returnHome(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("username", user);
+        intent.putExtra("role",role_id);
+        startActivity(intent);
+        finish();
     }
 }

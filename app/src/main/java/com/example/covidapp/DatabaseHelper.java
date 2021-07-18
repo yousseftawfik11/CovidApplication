@@ -245,4 +245,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return age;
     }
+
+    public int getVaccineId(String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT vaccine FROM user WHERE username=?",
+                new String[] {username});
+        int vaccine_ID=0 ;
+        while(cursor.moveToNext()) {
+            vaccine_ID = cursor.getInt(0);
+        }
+        cursor.close();
+        return vaccine_ID;
+    }
 }
