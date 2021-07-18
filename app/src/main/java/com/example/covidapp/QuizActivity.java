@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class QuizActivity extends AppCompatActivity {
     private Button mTrueButton, mFalseButton, mNextButton, mFormButton, mHomeButton;
     private TextView mQuestionTextView;
-    int listNumber, role_id;//a number representing which list to display (sent from intent)
+    int listNumber, role_id, getAge;//a number representing which list to display (sent from intent)
     String user, userID;
     DatabaseHelper db;
 
@@ -225,53 +225,80 @@ public class QuizActivity extends AppCompatActivity {
         }
         else {
             userID = String.valueOf(db.getID(user));
+            getAge = db.calcAge(user);
             if (listNumber == 1){
-                //Getting second dose date
-                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
-                c.add(Calendar.MONTH,3);
-                String dose2 = CD.format(c.getTime());
+                if (getAge < 18){//Validating the user is over 18 years which is the allowed age for AstraZeneca vaccine
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    Toast.makeText(this, R.string.AstraMinAge, Toast.LENGTH_LONG).show();
+                }
+                else {
+                    //Getting second dose date
+                    DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                    c.add(Calendar.MONTH,3);
+                    String dose2 = CD.format(c.getTime());
 
-                db.updateVaccine(userID,1, dose1, dose2);
-                Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
+                    db.updateVaccine(userID,1, dose1, dose2);
+                    Toast.makeText(this, "AstraZeneca Vaccine Booked", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(this,MainActivity.class);
-                intent.putExtra("username", user);
-                intent.putExtra("role",role_id);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    finish();
+                }
             }
             else if (listNumber == 2){
-                //Getting second dose date
-                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
-                c.add(Calendar.DAY_OF_MONTH,21);
-                String dose2 = CD.format(c.getTime());
+                if (getAge < 12){//Validating the user is over 12 years which is the allowed age for Pfizer vaccine
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    Toast.makeText(this, R.string.PfizerMinAge, Toast.LENGTH_LONG).show();
+                }
+                else {
+                    //Getting second dose date
+                    DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                    c.add(Calendar.DAY_OF_MONTH,21);
+                    String dose2 = CD.format(c.getTime());
 
-                db.updateVaccine(userID,2, dose1, dose2);
-                Toast.makeText(this, "Pfizer Vaccine Booked", Toast.LENGTH_LONG).show();
+                    db.updateVaccine(userID,2, dose1, dose2);
+                    Toast.makeText(this, "Pfizer Vaccine Booked", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(this,MainActivity.class);
-                intent.putExtra("username", user);
-                intent.putExtra("role",role_id);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    finish();
+                }
             }
             else {
-                //Getting second dose date
-                DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
-                c.add(Calendar.DAY_OF_MONTH,21);
-                String dose2 = CD.format(c.getTime());
+                if (getAge < 18){//Validating the user is over 18 years which is the allowed age for SinoPharm vaccine
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    Toast.makeText(this, R.string.SinoMinAge, Toast.LENGTH_LONG).show();
+                }
+                else {
+                    //Getting second dose date
+                    DateFormat CD = new SimpleDateFormat("yyyy/MM/dd");
+                    c.add(Calendar.DAY_OF_MONTH,21);
+                    String dose2 = CD.format(c.getTime());
 
-                db.updateVaccine(userID,3, dose1, dose2);
-                Toast.makeText(this, "Sinopharm Vaccine Booked", Toast.LENGTH_LONG).show();
+                    db.updateVaccine(userID,3, dose1, dose2);
+                    Toast.makeText(this, "Sinopharm Vaccine Booked", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(this,MainActivity.class);
-                intent.putExtra("username", user);
-                intent.putExtra("role",role_id);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(this,MainActivity.class);
+                    intent.putExtra("username", user);
+                    intent.putExtra("role",role_id);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }
-
     }
 
 

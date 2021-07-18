@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button adminbtn, moreinfo, quizAstra, quizPfiz, quizSino;
     String user;
-    Integer test;
     int role_id,vaccine_id;
 
     @Override
@@ -55,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
             adminbtn.setVisibility(View.INVISIBLE);
 
         user = getIntent().getStringExtra("username");
-        test = dbHelper.calcAge(user);
-        Toast.makeText(this, test.toString(), Toast.LENGTH_LONG).show();
 
         vaccine_id = dbHelper.getVaccineId(user);
         if(vaccine_id == 1 || vaccine_id == 2 || vaccine_id == 3){
