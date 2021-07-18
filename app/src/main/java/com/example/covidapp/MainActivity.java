@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
 
-    Button adminbtn, moreinfo, quizAstra, quizPfiz, quizSino;
+    Button adminbtn, moreinfo, quizAstra, quizPfiz, quizSino, profilebtn, signoutbtn;
     String user;
     int role_id,vaccine_id;
 
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         quizPfiz = findViewById(R.id.PfizerQuizButton);
         quizAstra = findViewById(R.id.AstraQuizButton);
         quizSino = findViewById(R.id.SinoQuizButton);
+        profilebtn = findViewById(R.id.profile_button);
+        signoutbtn = findViewById(R.id.signout_button);
 
         //to show the icon in the title bar
         ActionBar actionBar = getSupportActionBar();
@@ -55,15 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
         user = getIntent().getStringExtra("username");
 
-        vaccine_id = dbHelper.getVaccineId(user);
-        if(vaccine_id == 1 || vaccine_id == 2 || vaccine_id == 3){
-            quizSino.setEnabled(false);
-            quizSino.setText("Registered");
-            quizPfiz.setEnabled(false);
-            quizPfiz.setText("Registered");
-            quizAstra.setEnabled(false);
-            quizAstra.setText("Registered");
+        if (user != null){
+            vaccine_id = dbHelper.getVaccineId(user);
+            if(vaccine_id == 1 || vaccine_id == 2 || vaccine_id == 3){
+                quizSino.setEnabled(false);
+                quizSino.setText("Registered");
+                quizPfiz.setEnabled(false);
+                quizPfiz.setText("Registered");
+                quizAstra.setEnabled(false);
+                quizAstra.setText("Registered");
+            }
+            else if (user.equals("guest") == true ) {
+                profilebtn.setVisibility(View.INVISIBLE);
+                signoutbtn.setVisibility(View.INVISIBLE);
+            }
         }
+
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
@@ -127,5 +136,10 @@ public class MainActivity extends AppCompatActivity {
         next.putExtra("role", role_id);
         startActivity(next);
         //a7a
+    }
+
+    public void toSignout(View view) {
+        Intent intent = new Intent(this, LoginPage.class);
+        startActivity(intent);
     }
 }
