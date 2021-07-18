@@ -8,36 +8,38 @@
     android:background="#43ABC9">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="348dp"
-        android:layout_height="611dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="327dp"
+        android:layout_height="451dp"
+        android:background="@drawable/shapes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133">
+        app:layout_constraintVertical_bias="0.236">
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginBottom="20dp"
             android:onClick="myRegister"
             android:text="@string/acessBtnRegister"
+            app:backgroundTint="#43ABC9"
             app:layout_constraintBottom_toTopOf="@+id/btnGuest"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="168dp"
             android:onClick="myLogin"
             android:text="@string/acessBtnLogin"
+            app:backgroundTint="#43ABC9"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/IVAcessLogo" />
 
@@ -45,22 +47,45 @@
             android:id="@+id/btnGuest"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="14dp"
             android:onClick="myGuestHome"
             android:text="@string/acessBtnGuest"
-            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:backgroundTint="#43ABC9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/IVAcessLogo"
-            android:layout_width="320dp"
-            android:layout_height="362dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="317dp"
+            android:layout_height="278dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mlogo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="314dp"
+        android:layout_height="318dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginRight="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/whitecirlce" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="248dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/whitecirlce" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
