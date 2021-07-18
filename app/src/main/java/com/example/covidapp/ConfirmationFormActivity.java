@@ -47,22 +47,11 @@ public class ConfirmationFormActivity extends AppCompatActivity {
 
         //myTitle= findViewById(R.id.vaccine_title);
 
-        // To determine the header of the form
+        // To know which vaccine was chosen
         listNumber = getIntent().getExtras().getInt("QuestionListNumber");
-        /*if (listNumber == 1){
-            myTitle.setText("Astrazeneca Confirmation Form");
-
-        }
-        else if(listNumber == 2){
-            myTitle.setText("Pfizer Confirmation Form");
-
-        }
-        else{
-            myTitle.setText("Sinopharm Confirmation Form");
-
-        }*/
         user = getIntent().getStringExtra("username");
         role_id =getIntent().getIntExtra("role",0);
+
         db = new DatabaseHelper(this);
         //profile = new ArrayList<>();
         usernameC = findViewById(R.id.conf_Username);
@@ -77,55 +66,6 @@ public class ConfirmationFormActivity extends AppCompatActivity {
         Second_date= findViewById(R.id.secondDose_date);
         vaccineC = findViewById(R.id.conf_vaccine);
         loadProfile();
-
-        /*String Pname= getIntent().getStringExtra("name");
-
-        String Pnum = getIntent().getStringExtra("phone");
-        String PAdress= getIntent().getStringExtra("address");
-        String PEmail= getIntent().getStringExtra("email");
-        String PICnum= getIntent().getStringExtra("icNumber");
-        String P_age= getIntent().getStringExtra("age");
-        String genderNum= getIntent().getStringExtra("gender");
-
-
-        nameC.setText(Pname);
-        GenderC.setText(genderNum);
-        phoneNumC.setText(Pnum);
-        addressC.setText(PAdress);
-        EmailC.setText(PEmail);
-        ICnumC.setText(PICnum);
-        ageC.setText(P_age);*/
-
-        /*//determining the date of the first does by adding 7 days to the day the form is filled
-        DateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");//format
-        Calendar c = Calendar.getInstance();//today's date
-        c.add(Calendar.DAY_OF_MONTH, 7);//adding 7 days
-        String result = currentDate.format(c.getTime());//Storing result
-        First_date.setText(result);
-
-        //determining the second dose date depending on the selected vaccine in the beginning of the app
-        if(listNumber==1){
-
-            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
-            Calendar cal = Calendar.getInstance();
-            c.add(Calendar.MONTH,3);
-            String results = CD.format(c.getTime());
-            Second_date.setText(results);
-        }
-        else if(listNumber==2){
-            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
-            Calendar cal = Calendar.getInstance();
-            c.add(Calendar.DAY_OF_MONTH,21);
-            String results = CD.format(c.getTime());
-            Second_date.setText(results);
-        }
-        else {
-            DateFormat CD = new SimpleDateFormat("dd/MM/yyy");
-            Calendar cal = Calendar.getInstance();
-            c.add(Calendar.DAY_OF_MONTH,21);
-            String results = CD.format(c.getTime());
-            Second_date.setText(results);
-        }*/
 
     }
 
@@ -166,18 +106,6 @@ public class ConfirmationFormActivity extends AppCompatActivity {
                 vaccineC.setText("None");
             }
         }
-        /*if(cursor.getCount()==0){
-            Toast.makeText(this,"User Profile not found", Toast.LENGTH_SHORT).show();
-        }else{
-            //while (cursor.moveToNext()){
-                //profile.add(cursor.getString(0));
-                usernameC.setText(user);
-                String name = cursor.getString(4);
-                nameC.setText(name);
-            //}
-        }*/
-
-
     }
 
 

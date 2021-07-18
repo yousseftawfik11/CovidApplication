@@ -199,18 +199,7 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    /*public void fillForm(View view) {//Takes user to form activity
-        Intent intent = new Intent(this,FormActivity.class);
-        intent.putExtra("QuestionListNumber", listNumber);
-        startActivity(intent);
-    }*/
-
-    /*public void returnHome(View view) {//takes user back to homepage
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }*/
-
-    public void bookVaccine(View view) {
+    public void bookVaccine(View view) {//Function that saves the vaccine data into the database (vaccine id, first dose and second dose)
         //Getting today's date to add the 7 days (this is a rule we made to give the first does to user after 7 days of registration)
         DateFormat currentDate = new SimpleDateFormat("yyyy/MM/dd");//format
         Calendar c = Calendar.getInstance();//today's date
@@ -218,7 +207,7 @@ public class QuizActivity extends AppCompatActivity {
         String dose1 = currentDate.format(c.getTime());//Storing result
 
 
-        if (user == null){
+        if (user.equals("guest") == true){
             Intent intent = new Intent(this,LoginPage.class);
             startActivity(intent);
             Toast.makeText(this, "You must be Logged In", Toast.LENGTH_LONG).show();

@@ -62,7 +62,4 @@ public class ControlCenter extends AppCompatActivity {
             }
         }
     }
-
-
-
 }

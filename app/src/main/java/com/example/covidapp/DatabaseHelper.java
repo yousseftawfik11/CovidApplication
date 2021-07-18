@@ -165,17 +165,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor userProfileInfo(String username){
-        /*//sql query to display all data in database
-        String query ="SELECT * FROM user WHERE username=?";
-        //creating database object
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db !=null){//if database is not null
-            cursor = db.rawQuery(query,null);//execute the query and storing the result in cursor
-        }
-        return cursor;//will contain all the data from the table*/
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if (db != null){
@@ -185,60 +174,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    /*public int calcAge (String username) {
-        Date date = new Date();
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT dob FROM user WHERE username=?",
-                new String[] {username});
-        String sDate = new String();
-        while(cursor.moveToNext()) {
-            sDate = cursor.getString(0);
-        }
-        cursor.close();
-        DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        try{
-            date = format.parse(sDate);
-        }
-        catch (ParseException e){
-            e.printStackTrace();
-        }
-        //Now we have the dob as a date object
-        //extracting year, month and day from date
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);//Converting date to calendar type
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH) + 1;//We add 1 because the month starts from 0 and not 1
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        //return userID;
-        //return day;
-        Calendar today = Calendar.getInstance();
-        Calendar dob = Calendar.getInstance();
-
-        dob.set(year, month, day);
-        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-        //return today.get(Calendar.DAY_OF_YEAR);//198
-        //return dob.get(Calendar.DAY_OF_YEAR);//203
-        if (today.get(Calendar.MONTH + 1) < dob.get(Calendar.MONTH)){//We add 1 to today's month to fix it, while the dob month is already fixed
-            age = age-1;
-        }
-        else if (today.get(Calendar.MONTH) == dob.get(Calendar.MONTH)){
-            if (dob.get(Calendar.DAY_OF_MONTH) > today.get(Calendar.DAY_OF_MONTH)){
-                age = age-1;
-            }
-        }
-        return age;
-    }*/
-    public int calcAge (String username) {
+    public int calcAge (String username) {//Function to calculate age of user
         int age = -1; // age if no user
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(
+        Cursor cursor = db.query(//query to calculate age of user for future validation
                 "user",
                 new String[]{"substr(date('now'),1,4) - substr(dob,1,4) - (strftime('%j',replace(dob,'/','-')) > strftime('%j','now')) AS age"},
                 "username=?",
                 new String[]{username},
                 null,null,null
         );
-        //Cursor cursor = db.rawQuery("SELECT substr(date('now'),1,4) - substr(dob,1,4)  - (strftime('%j',replace(dob,'/','-')) > strftime('%j','now')) AS age FROM user WHERE username=?", new String[]{username});
         if (cursor.moveToFirst()) {
             age = cursor.getInt(cursor.getColumnIndex("age"));
         }
@@ -246,7 +191,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return age;
     }
 
-    public int getVaccineId(String username){
+    public int getVaccineId(String username){//Function to get the id of the vaccine
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT vaccine FROM user WHERE username=?",
                 new String[] {username});

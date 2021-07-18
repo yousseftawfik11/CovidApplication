@@ -44,17 +44,6 @@ public class FormActivity extends AppCompatActivity {
         //Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        /*myTitle=(TextView)findViewById(R.id.FormTitle);
-        listNumber = getIntent().getExtras().getInt("QuestionListNumber");
-        if (listNumber == 1){
-            myTitle.setText("Astrazeneca User Form");
-        }
-        else if(listNumber == 2){
-            myTitle.setText("Pfizer User Form");
-        }
-        else{
-            myTitle.setText("Sinopharm User Form");
-        }*/
         myName = findViewById(R.id.text_name2);
         myGender = findViewById(R.id.radio_gender);
         myDob = findViewById(R.id.text_age2);
@@ -136,36 +125,6 @@ public class FormActivity extends AppCompatActivity {
                 TextUtils.isEmpty(myCPassword.getText()) == false && TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myDob.getError()) &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
                 TextUtils.isEmpty(myEmail.getError()) && TextUtils.isEmpty(myIC.getText()) == false){
-            /*
-            //Proceeding to next activity
-            Intent intent = new Intent(this,ConfirmationFormActivity.class);
-            //intent.putExtra("QuestionListNumber", listNumber);
-
-            //storing user values in variables
-            String cName = myName.getText().toString();
-            String cAge = myAge.getText().toString();
-            String cPhone = myPhone.getText().toString();
-            String cAddress = myAddress.getText().toString();
-            String cEmail = myEmail.getText().toString();
-            String cIC = myIC.getText().toString();
-
-
-            //Sending values to next activity
-            intent.putExtra("name", cName);
-            //intent.putExtra("gender", myGender.getCheckedRadioButtonId());
-            intent.putExtra("age", cAge);
-            intent.putExtra("phone", cPhone);
-            intent.putExtra("address", cAddress);
-            intent.putExtra("email", cEmail);
-            intent.putExtra("icNumber", cIC);
-            if (myGender.getCheckedRadioButtonId() == R.id.rbMale){
-                intent.putExtra("gender", "Male");
-            }
-            else {
-                intent.putExtra("gender", "Female");
-            }
-
-            startActivity(intent);*/
 
             //New things for Ass3
             String ruser = myUsername.getText().toString();
@@ -221,7 +180,7 @@ public class FormActivity extends AppCompatActivity {
 
     }
 
-    private void dobVal(TextView myDob) {
+    private void dobVal(TextView myDob) {//Validates the date of birth that the user types while registering
         String checkDob = myDob.getText().toString().trim();
         String pattern = "^\\d{4}\\/(0[1-9]|1[012])\\/(0[1-9]|[12][0-9]|3[01])$";
         if (checkDob.matches(pattern)){
@@ -260,28 +219,4 @@ public class FormActivity extends AppCompatActivity {
             email.setError("Invalid email! Please put a valid email");
         }
     }
-
-
-
-    /*private void ageVal(int vacType, TextView age){//ensures that the user is within the allowed age
-        int checkAge = Integer.parseInt(age.getText().toString());//Converting the number to an integer
-        if (vacType == 1){//Astrazeneca
-            if(checkAge<18){
-                age.setError("You must be over 18 years old to take Astrazeneca");
-                Toast.makeText(this, R.string.AstraMinAge, Toast.LENGTH_LONG).show();
-            }
-        }
-        else if (vacType == 2){
-            if(checkAge<12){
-                age.setError("You must be over 12 years old to take Pfizer");
-                Toast.makeText(this, R.string.PfizerMinAge, Toast.LENGTH_LONG).show();
-            }
-        }
-        else {
-            if(checkAge<18){
-                age.setError("You must be over 18 years old to take Sinopharm");
-                Toast.makeText(this, R.string.SinoMinAge, Toast.LENGTH_LONG).show();
-            }
-        }
-    }*/
 }

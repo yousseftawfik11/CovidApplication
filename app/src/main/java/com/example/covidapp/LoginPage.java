@@ -57,13 +57,6 @@ public class LoginPage extends AppCompatActivity {
             intent.putExtra("username", user);
             startActivity(intent);
 
-
-            int user_id= dbHelper.getID(user);
-            //this is where the user ID store you can change the destination of the intent as you wish
-            //you could put the user_id as an extra in the first intent and you could redirect it to another activty
-           // Intent intent2 = new Intent(this,MainActivity.class);
-            //intent2.putExtra("user_id", user_id);
-            //startActivity(intent2);
         }
         else {
             displayToast("Invalid username or password!");
