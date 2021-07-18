@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="1"
+                android:text="@string/rowId"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -37,7 +37,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toEndOf="@+id/usernameHead2"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toEndOf="@+id/dobHead2"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toEndOf="@+id/nameheader2"
                 app:layout_constraintTop_toBottomOf="@+id/username" />
 
@@ -70,7 +70,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintBottom_toTopOf="@+id/phoneNum"
                 app:layout_constraintStart_toEndOf="@+id/rolehead2" />
 
@@ -81,7 +81,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toEndOf="@+id/phonehead2"
                 app:layout_constraintTop_toBottomOf="@+id/dob" />
 
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="ID:"
+                android:text="@string/rowIdHead"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,7 +101,7 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginLeft="55dp"
                 android:layout_marginTop="8dp"
-                android:text="Username:"
+                android:text="@string/rowUsernameHead"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,7 +112,7 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginLeft="55dp"
                 android:layout_marginTop="8dp"
-                android:text="Name:"
+                android:text="@string/rowNameHead"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameHead2" />
 
@@ -123,7 +123,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
-                android:text="DOB:"
+                android:text="@string/rowDobHead"
                 app:layout_constraintStart_toEndOf="@+id/username"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,7 +134,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
-                android:text="Phone:"
+                android:text="@string/rowPhoneHead"
                 app:layout_constraintStart_toEndOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@+id/dobHead2" />
 
@@ -145,7 +145,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginBottom="8dp"
-                android:text="Role:"
+                android:text="@string/rowRoleHead"
                 app:layout_constraintBottom_toTopOf="@+id/phoneNum"
                 app:layout_constraintStart_toEndOf="@+id/dob" />
 
