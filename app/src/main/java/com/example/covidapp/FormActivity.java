@@ -13,8 +13,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class FormActivity extends AppCompatActivity {
-    private TextView myTitle, myName, myAge, myPhone, myAddress, myEmail, myIC, myUsername, myPassword, myCPassword, myVaccine, myFirstDose, mySecondDose;
+    private TextView myTitle, myName, myDob, myPhone, myAddress, myEmail, myIC, myUsername, myPassword, myCPassword, myVaccine, myFirstDose, mySecondDose;
     private RadioGroup myGender;
     int listNumber;
     DatabaseHelper dbHelper;
@@ -51,7 +57,7 @@ public class FormActivity extends AppCompatActivity {
         }*/
         myName = findViewById(R.id.text_name2);
         myGender = findViewById(R.id.radio_gender);
-        myAge = findViewById(R.id.text_age2);
+        myDob = findViewById(R.id.text_age2);
         myPhone = findViewById(R.id.text_phone2);
         myAddress = findViewById(R.id.text_address);
         myEmail = findViewById(R.id.text_email);
@@ -75,11 +81,12 @@ public class FormActivity extends AppCompatActivity {
         else{//Doesn't show error
         }
         //Checks for a age
-        if (TextUtils.isEmpty(myAge.getText())){
-            myAge.setError("Please enter your age");
+        if (TextUtils.isEmpty(myDob.getText())){
+            myDob.setError("Please enter your date of birth");
         }
-        else{//if an age is entered
+        else{//if a dob is entered
             //ageVal(listNumber, myAge);
+            dobVal(myDob);
         }
         //Check for a number
         if (TextUtils.isEmpty(myPhone.getText())){
@@ -126,7 +133,7 @@ public class FormActivity extends AppCompatActivity {
         }
         //checks that all fields are filled
         if(TextUtils.isEmpty(myUsername.getText()) == false && TextUtils.isEmpty(myPassword.getText()) == false &&
-                TextUtils.isEmpty(myCPassword.getText()) == false && TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myAge.getError()) &&
+                TextUtils.isEmpty(myCPassword.getText()) == false && TextUtils.isEmpty(myName.getText()) == false && TextUtils.isEmpty(myDob.getError()) &&
                 TextUtils.isEmpty(myPhone.getText()) == false && TextUtils.isEmpty(myAddress.getText()) == false &&
                 TextUtils.isEmpty(myEmail.getError()) && TextUtils.isEmpty(myIC.getText()) == false){
             /*
@@ -172,7 +179,7 @@ public class FormActivity extends AppCompatActivity {
             else {
                 rgender = "Female";
             }
-            String rdob = myAge.getText().toString();
+            String rdob = myDob.getText().toString();
             String rphone = myPhone.getText().toString();
             String raddress = myAddress.getText().toString();
             String remail = myEmail.getText().toString();
@@ -213,6 +220,34 @@ public class FormActivity extends AppCompatActivity {
         finish();
     }
 
+    private void dobVal(TextView myDob) {
+        String checkDob = myDob.getText().toString().trim();
+        String pattern = "^\\d{4}\\/(0[1-9]|1[012])\\/(0[1-9]|[12][0-9]|3[01])$";
+        if (checkDob.matches(pattern)){
+            //myDob.setError("Invalid email! Please put a valid email");
+            String sDate = myDob.getText().toString();
+            Date date = new Date();
+            DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+            try{
+                date = format.parse(sDate);
+            }
+            catch (ParseException e){
+                e.printStackTrace();
+            }
+            //Now we have the dob as a date object
+            //extracting year, month and day from date
+            Calendar today = Calendar.getInstance();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(date);
+            if (dob.after(today)){
+                myDob.setError("Invalid date of birth! This date hasn't come yet");
+            }
+        }
+        else {
+            myDob.setError("Invalid date of birth format! Please follow the format yyyy/MM/dd");
+        }
+    }
+
     public void displayToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
@@ -224,6 +259,8 @@ public class FormActivity extends AppCompatActivity {
             email.setError("Invalid email! Please put a valid email");
         }
     }
+
+
 
     /*private void ageVal(int vacType, TextView age){//ensures that the user is within the allowed age
         int checkAge = Integer.parseInt(age.getText().toString());//Converting the number to an integer
