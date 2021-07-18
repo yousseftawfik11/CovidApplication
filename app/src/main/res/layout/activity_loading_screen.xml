@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/alegreya_sans_sc_medium"
-        android:text="Welcome To My Vaccine App"
+        android:text="@string/loadingScreenMessage"
         android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"

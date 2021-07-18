@@ -38,7 +38,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/alegreya_sans_sc_medium"
-            android:text="Welcome Back!"
+            android:text="@string/loginPageMessage"
             android:textSize="30dp" />
 
         <TableRow
@@ -98,7 +98,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="14dp"
             android:onClick="confirmLogin"
-            android:text="Log In"
+            android:text="@string/lLoginBtn"
             app:backgroundTint="#35F809" />
     </LinearLayout>
 
@@ -109,7 +109,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="212dp"
         android:gravity="center"
-        android:text="If you want to register for your vaccine appointment you will have to log in using your username and password"
+        android:text="@string/lGuestMessage"
         android:textColor="#FFFFFF"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,7 +125,7 @@
         android:layout_marginStart="90dp"
         android:layout_marginLeft="90dp"
         android:layout_marginTop="8dp"
-        android:text="Don't have an account?"
+        android:text="@string/lGuestRegister"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_desc" />
@@ -147,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:fontFamily="@font/alegreya_sans_sc_medium"
-        android:text="My Vaccine"
+        android:text="@string/lTitle"
         android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"
