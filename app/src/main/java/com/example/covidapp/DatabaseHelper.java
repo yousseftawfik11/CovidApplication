@@ -185,7 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public int calcAge (String username) {
+    /*public int calcAge (String username) {
         Date date = new Date();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT dob FROM user WHERE username=?",
@@ -226,6 +226,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 age = age-1;
             }
         }
+        return age;
+    }*/
+    public int calcAge (String username) {
+        int age = -1; // age if no user
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                "user",
+                new String[]{"substr(date('now'),1,4) - substr(dob,1,4) - (strftime('%j',replace(dob,'/','-')) > strftime('%j','now')) AS age"},
+                "username=?",
+                new String[]{username},
+                null,null,null
+        );
+        //Cursor cursor = db.rawQuery("SELECT substr(date('now'),1,4) - substr(dob,1,4)  - (strftime('%j',replace(dob,'/','-')) > strftime('%j','now')) AS age FROM user WHERE username=?", new String[]{username});
+        if (cursor.moveToFirst()) {
+            age = cursor.getInt(cursor.getColumnIndex("age"));
+        }
+        cursor.close();
         return age;
     }
 }

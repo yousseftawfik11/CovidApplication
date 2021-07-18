@@ -14,18 +14,18 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    DatabaseHelper dbHelper;
+    //DatabaseHelper dbHelper;
 
     Button adminbtn, moreinfo;
     String user;
-    Integer test;
+    //Integer test;
     int role_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbHelper = new DatabaseHelper(this);
+        //dbHelper = new DatabaseHelper(this);
 
         adminbtn = findViewById(R.id.admin_button);
         moreinfo = findViewById(R.id.PfizerQuizButton);
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
             adminbtn.setVisibility(View.INVISIBLE);
 
         user = getIntent().getStringExtra("username");
-        test = dbHelper.calcAge(user);
-        Toast.makeText(this, test.toString(), Toast.LENGTH_LONG).show();
+        //test = dbHelper.calcAge(user);
+        //Toast.makeText(this, test.toString(), Toast.LENGTH_LONG).show();
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
