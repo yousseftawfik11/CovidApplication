@@ -16,10 +16,10 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper dbHelper;
 
-    Button adminbtn, moreinfo;
+    Button adminbtn, moreinfo, quizAstra, quizPfiz, quizSino;
     String user;
     Integer test;
-    int role_id;
+    int role_id,vaccine_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
 
         adminbtn = findViewById(R.id.admin_button);
-        moreinfo = findViewById(R.id.PfizerQuizButton);
+        quizPfiz = findViewById(R.id.PfizerQuizButton);
+        quizAstra = findViewById(R.id.AstraQuizButton);
+        quizSino = findViewById(R.id.SinoQuizButton);
 
         //to show the icon in the title bar
         ActionBar actionBar = getSupportActionBar();
@@ -55,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
         user = getIntent().getStringExtra("username");
         test = dbHelper.calcAge(user);
         Toast.makeText(this, test.toString(), Toast.LENGTH_LONG).show();
+
+        vaccine_id = dbHelper.getVaccineId(user);
+        if(vaccine_id == 1 || vaccine_id == 2 || vaccine_id == 3){
+            quizSino.setEnabled(false);
+            quizSino.setText("Registered");
+            quizPfiz.setEnabled(false);
+            quizPfiz.setText("Registered");
+            quizAstra.setEnabled(false);
+            quizAstra.setText("Registered");
+        }
     }
 //implicit intents to open vaccine who websites
     public void AstraWeb(View view) {
@@ -62,12 +74,14 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("https://www.who.int/news-room/feature-stories/detail/the-oxford-astrazeneca-covid-19-vaccine-what-you-need-to-know");
         Intent Astra = new Intent(Intent.ACTION_VIEW,uri);
         startActivity(Astra);
+
     }
 
     public void pfizerWeb(View view) {
         Uri uri = Uri.parse("https://www.who.int/news-room/feature-stories/detail/who-can-take-the-pfizer-biontech-covid-19--vaccine");
         Intent pfizer = new Intent(Intent.ACTION_VIEW,uri);
         startActivity(pfizer);
+
     }
 
     public void SinopharmWeb(View view) {
@@ -84,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         next.putExtra("username", user);
         next.putExtra("role", role_id);
         startActivity(next);
+
     }
 
     public void AstraQuiz(View view) {
@@ -92,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         next.putExtra("username", user);
         next.putExtra("role", role_id);
         startActivity(next);
+
     }
 
     public void PfizerQuiz(View view) {
@@ -100,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         next.putExtra("username", user);
         next.putExtra("role", role_id);
         startActivity(next);
+
     }
 
     public void toadmin(View view) {
@@ -112,6 +129,6 @@ public class MainActivity extends AppCompatActivity {
         next.putExtra("username", user);
         next.putExtra("role", role_id);
         startActivity(next);
-        //a7amos
+        //a7a
     }
 }

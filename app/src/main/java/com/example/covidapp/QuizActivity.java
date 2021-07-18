@@ -238,6 +238,7 @@ public class QuizActivity extends AppCompatActivity {
                 intent.putExtra("username", user);
                 intent.putExtra("role",role_id);
                 startActivity(intent);
+                finish();
             }
             else if (listNumber == 2){
                 //Getting second dose date
@@ -252,6 +253,7 @@ public class QuizActivity extends AppCompatActivity {
                 intent.putExtra("username", user);
                 intent.putExtra("role",role_id);
                 startActivity(intent);
+                finish();
             }
             else {
                 //Getting second dose date
@@ -266,8 +268,18 @@ public class QuizActivity extends AppCompatActivity {
                 intent.putExtra("username", user);
                 intent.putExtra("role",role_id);
                 startActivity(intent);
+                finish();
             }
         }
 
+    }
+
+
+    public void returnHome(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("username", user);
+        intent.putExtra("role",role_id);
+        startActivity(intent);
+        finish();
     }
 }
