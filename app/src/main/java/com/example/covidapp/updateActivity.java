@@ -142,7 +142,7 @@ public class updateActivity extends AppCompatActivity {
 
     void confrimDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete"+name+ "?");
+        builder.setTitle("Delete "+name+ "?");
         builder.setMessage("Are you sure you want to delete this user?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

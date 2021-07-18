@@ -8,6 +8,7 @@
     tools:context=".LoginPage">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,12 +22,14 @@
         android:id="@+id/linearLayout"
         android:layout_width="361dp"
         android:layout_height="259dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/shapes"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/login_desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/app_title">
 
         <TextView
             android:id="@+id/login_head"
@@ -44,14 +47,14 @@
             android:layout_gravity="center">
 
             TextView
-                android:id="@+id/usernameTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="14dp"
-                android:text="Username:"
-                android:textSize="16dp" />
+            android:id="@+id/usernameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="14dp"
+            android:text="Username:"
+            android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/ETusername"
@@ -103,6 +106,7 @@
         android:id="@+id/login_desc"
         android:layout_width="346dp"
         android:layout_height="57dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="212dp"
         android:gravity="center"
         android:text="If you want to register for your vaccine appointment you will have to log in using your username and password"
@@ -141,7 +145,7 @@
         android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/alegreya_sans_sc_medium"
         android:text="My Vaccine"
         android:textColor="@color/white"
@@ -149,33 +153,33 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="447dp"
         android:layout_height="274dp"
-        android:layout_marginTop="532dp"
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvLoginGoRegister"
         app:srcCompat="@drawable/whitecirlce" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="439dp"
         android:layout_height="258dp"
-        android:layout_marginTop="592dp"
+        android:layout_marginTop="19dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtnRegister"
         app:srcCompat="@drawable/whitecirlce" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="149dp"
-        android:layout_height="150dp"
+        android:layout_width="106dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
