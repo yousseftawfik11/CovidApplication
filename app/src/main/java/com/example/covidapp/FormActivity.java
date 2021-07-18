@@ -198,6 +198,7 @@ public class FormActivity extends AppCompatActivity {
                         Intent intent = new Intent(this,MainActivity.class);
                         intent.putExtra("username",ruser);
                         startActivity(intent);
+                        finish();
                     }
                     else {
                         displayToast("Error");
@@ -217,7 +218,7 @@ public class FormActivity extends AppCompatActivity {
         else {
             //stays on the same page
         }
-        finish();
+
     }
 
     private void dobVal(TextView myDob) {
